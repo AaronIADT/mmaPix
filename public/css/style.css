@@ -1,0 +1,119 @@
+.col-3a{
+    background: black;
+
+}
+
+.col-12a{
+    background:black;
+    padding-bottom: 0;
+
+}
+
+.col-12BAR{
+    background: black;
+    padding-bottom: 0;
+
+}
+
+.carousel-inner img {
+  height: 100%;
+  width: auto;
+}
+
+
+/* change the background color */
+.navbar-custom {
+    background-color: black;
+
+}
+
+ul#menu li {
+  display:inline;
+    padding: 30px;
+}
+
+.col-4a
+{
+    padding: 15px;
+}
+
+h5a{
+    color: black;
+    font-size: 22px;
+    font-family: 'Bebas Neue', cursive;
+
+
+}
+
+h5a{
+    color: black;
+    font-size: 22px;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+
+
+}
+
+midBlock
+{
+   text-align: center;
+}
+
+.page-footer
+{
+
+    background: black;
+
+}
+
+.nav-item
+{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    font-family: 'Bebas Neue', cursive;
+
+}
+
+.nav-item2
+{
+    padding-left: 50px;
+    padding-right: 50px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+
+}
+
+a{
+    color: white;
+
+}
+
+a:hover {
+  color: lightgray;
+}
+
+footer
+{
+    height: 250px;
+}
+
+input{
+    width: 300px;
+}
+
+.col-6{
+    display: inline-block;
+}
+.container-fluid
+{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.mid
+{
+    margin: auto;
+    padding-left: 350px;
+
+}
