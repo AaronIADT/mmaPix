@@ -9,15 +9,24 @@
 
 }
 
+.col-12b{
+    padding-bottom: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
 .col-12BAR{
     background: black;
     padding-bottom: 0;
 
 }
 
+
 .carousel-inner img {
   height: 100%;
-  width: auto;
+  width:100%;
 }
 
 
@@ -32,6 +41,12 @@ ul#menu li {
     padding: 30px;
 }
 
+.bottomTest
+{
+  position: absolute;
+  bottom: 20px;
+}
+
 .col-4a
 {
     padding: 15px;
@@ -40,6 +55,14 @@ ul#menu li {
 h5a{
     color: black;
     font-size: 22px;
+    font-family: 'Bebas Neue', cursive;
+
+
+}
+
+h6a{
+    color: black;
+    font-size: 30px;
     font-family: 'Bebas Neue', cursive;
 
 
@@ -116,4 +139,20 @@ input{
     margin: auto;
     padding-left: 350px;
 
+}
+
+.img-container {
+    overflow: hidden;
+    max-height: 210px;
+}
+
+.img {
+     width: 100%;
+     height: auto;
+ }
+
+.card-img-top
+{
+  width: 100px;
+  height: 100px;
 }

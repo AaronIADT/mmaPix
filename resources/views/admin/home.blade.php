@@ -9,9 +9,9 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
                     You are logged in as an Admin.
@@ -19,5 +19,10 @@
             </div>
         </div>
     </div>
+</div>
+@endsection
+@section('footer')
+<div class="container-fluid">
+    @include('layouts.foot')
 </div>
 @endsection

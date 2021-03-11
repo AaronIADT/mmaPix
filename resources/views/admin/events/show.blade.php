@@ -6,48 +6,48 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="card">
                 <div class="card-header">
-                    Book: {{ $fighter->name }}
+                    Book: {{ $event->nameEvent }}
                 </div>
 
                 <div class="card-body">
                     <table class="table table-hover">
                         <tbody>
                             <tr>
-                                <td>Name</td>
-                                <td>{{ $fighter->name }}</td>
+                                <td>Event Name</td>
+                                <td>{{ $event->nameEvent }}</td>
                             </tr>
                             <tr>
-                                <td>Age</td>
-                                <td>{{ $fighter->age }}</td>
+                                <td>Main Event</td>
+                                <td>{{ $event->subName }}</td>
                             </tr>
                             <tr>
-                                <td>Height</td>
-                                <td>{{ $fighter->height }}</td>
+                                <td>Location</td>
+                                <td>{{ $event->location }}</td>
                             </tr>
                             <tr>
-                                <td>Weight</td>
-                                <td>{{ $fighter->weight }}</td>
+                                <td>Start Time</td>
+                                <td>{{ $event->startTime }}</td>
                             </tr>
                             <tr>
-                                <td>Reach</td>
-                                <td>{{ $fighter->reach }}</td>
+                                <td>Date of Event</td>
+                                <td>{{ $event->dateEvent }}</td>
                             </tr>
                             <tr>
-                                <td>Record</td>
-                                <td>{{ $fighter->record }}</td>
+                                <td>PictureLink1</td>
+                                <td>{{ $event->pictureEvent }}</td>
                             </tr>
                             <tr>
-                                <td>Country</td>
-                                <td>{{ $fighter->country }}</td>
+                                <td>PictureLink2</td>
+                                <td>{{ $event->logoEvent }}</td>
                             </tr>
 
 
                         </tbody>
                     </table>
 
-                    <a href="{{ route('admin.fighters.index') }}" class="btn btn-default">Back</a>
-                    <a href="{{ route('admin.fighters.edit', $fighter->id) }}" class="btn btn-warning">Edit</a>
-                    <form style="display:inline-block" method="POST" action="{{  route('admin.fighters.destroy', $fighter->id)  }}">
+                    <a href="{{ route('admin.events.index') }}" class="btn btn-default">Back</a>
+                    <a href="{{ route('admin.events.edit', $event->id) }}" class="btn btn-warning">Edit</a>
+                    <form style="display:inline-block" method="POST" action="{{  route('admin.events.destroy', $event->id)  }}">
                         <input type="hidden" name="method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <button type="submit" class="form-control btn btn-danger">Delete</a>
@@ -58,6 +58,7 @@
         </div>
     </div>
 </div>
+
 @endsection
 @section('footer')
 <div class="container-fluid">

@@ -6,44 +6,44 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="card">
                 <div class="card-header">
-                    Fighter: {{ $fighter->name }}
+                    Event: {{ $event->name }}
                 </div>
 
                 <div class="card-body">
                     <table class="table table-hover">
                         <tbody>
                             <tr>
-                                <td>Title</td>
-                                <td>{{ $fighter->name }}</td>
+                                <td>Event Name</td>
+                                <td>{{ $event->nameEvent }}</td>
                             </tr>
                             <tr>
-                                <td>Age</td>
-                                <td>{{ $fighter->age }}</td>
+                                <td>Main Event</td>
+                                <td>{{ $event->subName }}</td>
                             </tr>
                             <tr>
-                                <td>Height</td>
-                                <td>{{ $fighter->height }}</td>
+                                <td>Location</td>
+                                <td>{{ $event->location }}</td>
                             </tr>
                             <tr>
-                                <td>Weight</td>
-                                <td>{{ $fighter->weight }}</td>
+                                <td>Start Time</td>
+                                <td>{{ $event->startTime }}</td>
                             </tr>
                             <tr>
-                                <td>Reach</td>
-                                <td>{{ $fighter->reach }}</td>
+                                <td>Date of Event</td>
+                                <td>{{ $event->dateEvent }}</td>
                             </tr>
                             <tr>
-                                <td>Record</td>
-                                <td>{{ $fighter->record }}</td>
+                                <td>PictureLink1</td>
+                                <td>{{ $event->pictureEvent }}</td>
                             </tr>
                             <tr>
-                                <td>Country</td>
-                                <td>{{ $fighter->country }}</td>
+                                <td>PictureLink2</td>
+                                <td>{{ $event->logoEvent }}</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <a href="{{ route('user.books.index') }}" class="btn btn-default">Back</a>
+                    <a href="{{ route('user.events.index') }}" class="btn btn-default">Back</a>
 
 
                 </div>

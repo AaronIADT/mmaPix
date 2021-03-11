@@ -1,9 +1,5 @@
 /*margin auto makes out container float in the middle*/
-.container {
-    width :1140px;
-    margin:auto;
-    overflow:hidden; /*This ignores elements have broken the doc flow*/
-}
+
 
 .one {
     width:65px;

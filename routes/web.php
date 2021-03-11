@@ -6,6 +6,9 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\User\FighterController as UserFighterController;
 use App\Http\Controllers\Admin\FighterController as AdminFighterController;
 
+use App\Http\Controllers\User\EventController as UserEventController;
+use App\Http\Controllers\Admin\EventController as AdminEventController;
+
 use App\Http\Controllers\User\HomeController as UserHomeController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 
@@ -31,10 +34,11 @@ Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin.ho
 Route::get('/user/home', [UserHomeController::class, 'index'])->name('user.home');
 
 
+//FIGHTERS ROUTES USER
 Route::get('/user/fighters/', [UserFighterController::class, 'index'])->name('user.fighters.index');
 Route::get('/user/fighters/{id}', [UserFighterController::class, 'show'])->name('user.fighters.show');
 
-
+//FIGHTERS ROUTES ADMIN
 Route::get('/admin/fighters/', [AdminFighterController::class, 'index'])->name('admin.fighters.index');
 Route::get('/admin/fighters/create', [AdminFighterController::class, 'create'])->name('admin.fighters.create');
 Route::get('/admin/fighters/{id}', [AdminFighterController::class, 'show'])->name('admin.fighters.show');
@@ -42,3 +46,16 @@ Route::post('/admin/fighters/store', [AdminFighterController::class, 'store'])->
 Route::get('/admin/fighters/{id}/edit', [AdminFighterController::class, 'edit'])->name('admin.fighters.edit');
 Route::put('/admin/fighters/{id}', [AdminFighterController::class, 'update'])->name('admin.fighters.update');
 Route::delete('/admin/fighters/{id}', [AdminFighterController::class, 'destroy'])->name('admin.fighters.destroy');
+
+//EVENTS ROUTES USER
+Route::get('/user/events/', [UserEventController::class, 'index'])->name('user.events.index');
+Route::get('/user/events/{id}', [UserEventController::class, 'show'])->name('user.events.show');
+
+//EVENTS ROUTES ADMIN
+Route::get('/admin/events/', [AdminEventController::class, 'index'])->name('admin.events.index');
+Route::get('/admin/events/create', [AdminEventController::class, 'create'])->name('admin.events.create');
+Route::get('/admin/events/{id}', [AdminEventController::class, 'show'])->name('admin.events.show');
+Route::post('/admin/events/store', [AdminEventController::class, 'store'])->name('admin.events.store');
+Route::get('/admin/events/{id}/edit', [AdminEventController::class, 'edit'])->name('admin.events.edit');
+Route::put('/admin/events/{id}', [AdminEventController::class, 'update'])->name('admin.events.update');
+Route::delete('/admin/events/{id}', [AdminEventController::class, 'destroy'])->name('admin.events.destroy');

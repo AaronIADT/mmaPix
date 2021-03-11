@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="card">
                 <div class="card-header">
-                    Add new fighter
+                    Add new Event
                 </div>
 
 
@@ -20,38 +20,38 @@
                         </ul>
                     </div>
                     @endif
-                    <form method="POST" action="{{ route('admin.fighters.store') }}">
+                    <form method="POST" action="{{ route('admin.events.store') }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group">
-                            <label for="title">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" />
+                            <label for="title">Name Event</label>
+                            <input type="text" class="form-control" id="nameEvent" name="nameEvent" value="{{ old('nameEvent') }}" />
                         </div>
                         <div class="form-group">
-                            <label for="title">Age</label>
-                            <input type="text" class="form-control" id="age" name="age" value="{{ old('age') }}" />
+                            <label for="title">Main Event</label>
+                            <input type="text" class="form-control" id="subName" name="subName" value="{{ old('subName') }}" />
                         </div>
                         <div class="form-group">
-                            <label for="title">Height</label>
-                            <input type="text" class="form-control" id="height" name="height" value="{{ old('height') }}" />
+                            <label for="title">Location</label>
+                            <input type="text" class="form-control" id="location" name="location" value="{{ old('location') }}" />
                         </div>
                         <div class="form-group">
-                            <label for="title">Weight</label>
-                            <input type="text" class="form-control" id="weight" name="weight" value="{{ old('weight') }}" />
+                            <label for="title">Start time</label>
+                            <input type="text" class="form-control" id="startTime" name="startTime" value="{{ old('startTime') }}" />
                         </div>
                         <div class="form-group">
-                            <label for="title">Reach</label>
-                            <input type="text" class="form-control" id="reach" name="reach" value="{{ old('reach') }}" />
+                            <label for="title">Date of Event</label>
+                            <input type="text" class="form-control" id="dateEvent" name="dateEvent" value="{{ old('dateEvent') }}" />
                         </div>
                         <div class="form-group">
-                            <label for="title">Record</label>
-                            <input type="text" class="form-control" id="record" name="record" value="{{ old('record') }}" />
+                            <label for="title">Event Pic link</label>
+                            <input type="text" class="form-control" id="pictureEvent" name="pictureEvent" value="{{ old('pictureEvent') }}" />
                         </div>
                         <div class="form-group">
-                            <label for="title">Country</label>
-                            <input type="text" class="form-control" id="country" name="country" value="{{ old('country') }}" />
+                            <label for="title">Logo pic link</label>
+                            <input type="text" class="form-control" id="logoEvent" name="logoEvent" value="{{ old('logoEvent') }}" />
                         </div>
                         <div class="float-right">
-                            <a href="{{ route('admin.fighters.index') }}" class="btn btn-default">Cancel</a>
+                            <a href="{{ route('admin.events.index') }}" class="btn btn-default">Cancel</a>
                             <button type="submit" class="btn btn-primary pull-right">Submit</button>
                         </div>
                     </form>
