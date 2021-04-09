@@ -8,7 +8,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    Fighters
+                    <h6a style="font-size: 40px;">Fighters</h6a>
                     <a href="{{ route('admin.fighters.create') }}" class="btn btn-primary float-right">Add</a>
                 </div>
 

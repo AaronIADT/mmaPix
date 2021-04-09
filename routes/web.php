@@ -12,6 +12,9 @@ use App\Http\Controllers\Admin\EventController as AdminEventController;
 use App\Http\Controllers\User\HomeController as UserHomeController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 
+use App\Http\Controllers\User\PickController as UserPickController;
+use App\Http\Controllers\Admin\PickController as AdminPickController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,7 +32,7 @@ Route::get('/about', [PageController::class, 'about'])->name('about');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+//ADMIN & USER HOME CONTROLLERS
 Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin.home');
 Route::get('/user/home', [UserHomeController::class, 'index'])->name('user.home');
 
@@ -48,8 +51,8 @@ Route::put('/admin/fighters/{id}', [AdminFighterController::class, 'update'])->n
 Route::delete('/admin/fighters/{id}', [AdminFighterController::class, 'destroy'])->name('admin.fighters.destroy');
 
 //EVENTS ROUTES USER
-Route::get('/user/events/', [UserEventController::class, 'index'])->name('user.events.index');
-Route::get('/user/events/{id}', [UserEventController::class, 'show'])->name('user.events.show');
+Route::get('/user/events/', [UserPickController::class, 'index'])->name('user.events.index');
+Route::get('/user/events/{id}', [UserPickController::class, 'show'])->name('user.events.show');
 
 //EVENTS ROUTES ADMIN
 Route::get('/admin/events/', [AdminEventController::class, 'index'])->name('admin.events.index');
@@ -59,3 +62,17 @@ Route::post('/admin/events/store', [AdminEventController::class, 'store'])->name
 Route::get('/admin/events/{id}/edit', [AdminEventController::class, 'edit'])->name('admin.events.edit');
 Route::put('/admin/events/{id}', [AdminEventController::class, 'update'])->name('admin.events.update');
 Route::delete('/admin/events/{id}', [AdminEventController::class, 'destroy'])->name('admin.events.destroy');
+
+
+//EVENTS PICKS USER
+Route::get('/user/picks/', [UserEventController::class, 'index'])->name('user.picks.index');
+Route::get('/user/picks/{id}', [UserEventController::class, 'show'])->name('user.picks.show');
+
+//EVENTS PICKS ADMIN
+Route::get('/admin/picks/', [AdminPickController::class, 'index'])->name('admin.picks.index');
+Route::get('/admin/picks/create', [AdminPickController::class, 'create'])->name('admin.picks.create');
+Route::get('/admin/picks/{id}', [AdminPickController::class, 'show'])->name('admin.picks.show');
+Route::post('/admin/picks/store', [AdminPickController::class, 'store'])->name('admin.picks.store');
+Route::get('/admin/picks/{id}/edit', [AdminPickController::class, 'edit'])->name('admin.picks.edit');
+Route::put('/admin/picks/{id}', [AdminPickController::class, 'update'])->name('admin.picks.update');
+Route::delete('/admin/picks/{id}', [AdminPickController::class, 'destroy'])->name('admin.picks.destroy');

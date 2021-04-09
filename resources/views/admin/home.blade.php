@@ -18,8 +18,26 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="col-sm-4" style=" overflow: scroll; height: 600px;">
+            <a class="twitter-timeline" href="https://twitter.com/ufc?ref_src=twsrc%5Etfw">Tweets by ufc</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+
     </div>
+
+
+
+
+
+
+
 </div>
+
+
+
 @endsection
 @section('footer')
 <div class="container-fluid">

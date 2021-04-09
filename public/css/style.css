@@ -95,6 +95,7 @@ midBlock
     padding-right: 50px;
     padding-top: 10px;
     font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
 
 }
 
@@ -103,9 +104,11 @@ midBlock
     padding-left: 50px;
     padding-right: 50px;
     font-family: 'Bebas Neue', cursive;
-    font-size: 30px;
+    font-size: 40px;
 
 }
+
+
 
 a{
     color: white;
