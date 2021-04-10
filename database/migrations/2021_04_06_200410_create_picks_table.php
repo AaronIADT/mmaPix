@@ -15,6 +15,8 @@ class CreatePicksTable extends Migration
     {
         Schema::create('picks', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('event_id')->unsigned();
             $table->string('fight1');
             $table->string('fight2');
             $table->string('fight3');
@@ -29,7 +31,7 @@ class CreatePicksTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');
-            $table->foreign('event_id')->references('id')->on('events')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('event_id')->references('id')->on('events')->onUpdate('cascade')->onDelete('restrict');
         });
     }
 

@@ -31,8 +31,7 @@
                                     <h6a class="card-title">{{ $fighter->name }}</h6a>
                                 </a>
                                 <div class="img-container">
-                                    <img class="img" src="https://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/2020-08/MIOCIC_STIPE_L_BELT_08-15.png?Ya24dony78mcBWVR2Ms0KFlNMbbuxxZ8&itok=N3WBYnHI"
-                                      alt="Card image cap">
+                                    <img class="img" src="{{ $fighter->picfighter }}" alt="Card image cap">
                                 </div>
                                 <br>
 

@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Fighter extends Model
 {
     use HasFactory;
+
+    public function fights()
+    {
+      return $this->belongsToMany('App\Models\Fight');
+    }
+
+
 }

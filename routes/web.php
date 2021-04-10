@@ -15,6 +15,8 @@ use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\User\PickController as UserPickController;
 use App\Http\Controllers\Admin\PickController as AdminPickController;
 
+use App\Http\Controllers\Admin\FightController as AdminFightController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -76,3 +78,8 @@ Route::post('/admin/picks/store', [AdminPickController::class, 'store'])->name('
 Route::get('/admin/picks/{id}/edit', [AdminPickController::class, 'edit'])->name('admin.picks.edit');
 Route::put('/admin/picks/{id}', [AdminPickController::class, 'update'])->name('admin.picks.update');
 Route::delete('/admin/picks/{id}', [AdminPickController::class, 'destroy'])->name('admin.picks.destroy');
+
+
+//FIGHTS
+Route::get('/admin/events/{id}/fights/create', [AdminFightController::class, 'create'])->name('admin.fights.create');
+Route::post('/admin/events/{id}/fights/store', [AdminFightController::class, 'store'])->name('admin.fights.store');

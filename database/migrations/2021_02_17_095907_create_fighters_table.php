@@ -22,6 +22,7 @@ class CreateFightersTable extends Migration
             $table->string('reach');
             $table->string('record');
             $table->string('country');
+            $table->string('picfighter');
             $table->timestamps();
         });
     }
