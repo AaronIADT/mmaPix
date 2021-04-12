@@ -14,4 +14,9 @@ class Event extends Model
     {
       return $this->hasMany('App\Models\Fight');
     }
+
+    public function fighters()
+    {
+      return $this->hasMany('App\Models\Fighter');
+    }
 }

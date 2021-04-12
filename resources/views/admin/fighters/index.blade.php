@@ -24,7 +24,7 @@
                     <div class="row">
                         @foreach ($fighters as $fighter)
 
-                        <div class="col-sm-3 card">
+                        <div class="col-sm-4 card">
 
                             <div class="card-body">
                                 <a href="productPage.html">
@@ -35,10 +35,10 @@
                                 </div>
                                 <br>
 
-                                <h4 style="color:black;">Weight: {{ $fighter->weight }}</h4>
-                                <h4 style="color:black;">Record: {{ $fighter->record }}</h4>
-                                <h4 style="color:black;">Age: {{ $fighter->age }}</h4>
-                                <h4 style="color:black;">Height: {{ $fighter->height }}</h4>
+                                <h6 style="color:black;">Weight: {{ $fighter->weight }}</h6>
+                                <h6 style="color:black;">Record: {{ $fighter->record }}</h6>
+                                <h6 style="color:black;">Age: {{ $fighter->age }}</h6>
+                                <h6 style="color:black;">Height: {{ $fighter->height }}</h6>
 
                                 <div>
                                     {{-- spacer --}}

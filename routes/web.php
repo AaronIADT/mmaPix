@@ -53,8 +53,8 @@ Route::put('/admin/fighters/{id}', [AdminFighterController::class, 'update'])->n
 Route::delete('/admin/fighters/{id}', [AdminFighterController::class, 'destroy'])->name('admin.fighters.destroy');
 
 //EVENTS ROUTES USER
-Route::get('/user/events/', [UserPickController::class, 'index'])->name('user.events.index');
-Route::get('/user/events/{id}', [UserPickController::class, 'show'])->name('user.events.show');
+Route::get('/user/events/', [UserEventController::class, 'index'])->name('user.events.index');
+Route::get('/user/events/{id}', [UserEventController::class, 'show'])->name('user.events.show');
 
 //EVENTS ROUTES ADMIN
 Route::get('/admin/events/', [AdminEventController::class, 'index'])->name('admin.events.index');
@@ -67,8 +67,8 @@ Route::delete('/admin/events/{id}', [AdminEventController::class, 'destroy'])->n
 
 
 //EVENTS PICKS USER
-Route::get('/user/picks/', [UserEventController::class, 'index'])->name('user.picks.index');
-Route::get('/user/picks/{id}', [UserEventController::class, 'show'])->name('user.picks.show');
+Route::get('/user/picks/', [UserPickController::class, 'index'])->name('user.picks.index');
+Route::get('/user/picks/{id}', [UserPickController::class, 'show'])->name('user.picks.show');
 
 //EVENTS PICKS ADMIN
 Route::get('/admin/picks/', [AdminPickController::class, 'index'])->name('admin.picks.index');

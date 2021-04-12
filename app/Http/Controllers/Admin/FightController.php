@@ -6,9 +6,19 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\Fighter;
+use App\Models\Fight;
 
 class FightController extends Controller
 {
+
+
+
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('role:admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -41,9 +51,17 @@ class FightController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        $fight = new Fight();
+        $fight->event_id = $id;
+        $fight->fighter_id_1 = $request->input('fighter_id_1');
+        $fight->fighter_id_2 = $request->input('fighter_id_2');
+        $fight->order = $request->input('order');
+        $fight->save();
+
+
+        return redirect()->route('admin.events.show', $id);
     }
 
     /**

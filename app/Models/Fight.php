@@ -14,8 +14,13 @@ class Fight extends Model
       return $this->belongsTo('App\Models\Event');
     }
 
-    public function fighters()
+    public function fighterA()
     {
-      return $this->hasMany('App\Models\Fighter');
+      return $this->hasOne('App\Models\Fighter', 'id', 'fighter_id_1');
+    }
+
+    public function fighterB()
+    {
+      return $this->hasOne('App\Models\Fighter', 'id', 'fighter_id_2');
     }
 }

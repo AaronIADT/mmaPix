@@ -11,7 +11,7 @@ class Fighter extends Model
 
     public function fights()
     {
-      return $this->belongsToMany('App\Models\Fight');
+      return $this->belongsTo('App\Models\Fight');
     }
 
 

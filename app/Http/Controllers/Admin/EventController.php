@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\Fight;
+use App\Models\Fighter;
 
 class EventController extends Controller
 {
@@ -29,9 +31,11 @@ class EventController extends Controller
     public function index()
     {
       $events = Event::all();
+      $fights = Fight::all();
 
       return view('admin.events.index', [
-        'events' => $events
+        'events' => $events,
+        'fights' => $fights
       ]);
     }
 
@@ -89,9 +93,17 @@ class EventController extends Controller
     public function show($id)
     {
       $event = Event::findOrFail($id);
+      $fights = Fight::where('event_id', $id)->get();
+      //$fights = Fight::all();
+      // $fighters = Fighter::all();
+
+
+
 
       return view('admin.events.show', [
-        'event' => $event
+        'event' => $event,
+         'fights' => $fights,
+        // 'fighters' => $fighters
       ]);
     }
 

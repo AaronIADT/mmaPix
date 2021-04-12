@@ -15,9 +15,9 @@ class CreateFightsTable extends Migration
     {
         Schema::create('fights', function (Blueprint $table) {
             $table->id();
-            $table->unsignedbigInteger('event_id');
-            $table->unsignedbigInteger('fighter_id_1');
-            $table->unsignedbigInteger('fighter_id_2');
+            $table->unsignedbigInteger('event_id')->unsigned();
+            $table->unsignedbigInteger('fighter_id_1')->unsigned();
+            $table->unsignedbigInteger('fighter_id_2')->unsigned();
             $table->string('order');
             $table->timestamps();
 

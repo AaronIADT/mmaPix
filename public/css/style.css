@@ -45,6 +45,14 @@ ul#menu li {
 {
   position: absolute;
   bottom: 20px;
+
+}
+
+.bottomTest2
+{
+  position: absolute;
+  bottom: 20px;
+  float:right;
 }
 
 .col-4a
@@ -63,6 +71,14 @@ h5a{
 h6a{
     color: black;
     font-size: 30px;
+    font-family: 'Bebas Neue', cursive;
+
+
+}
+
+h2a{
+    color: black;
+    font-size: 40px;
     font-family: 'Bebas Neue', cursive;
 
 
@@ -147,6 +163,13 @@ input{
 .img-container {
     overflow: hidden;
     max-height: 210px;
+
+}
+
+.img-container2 {
+    overflow: hidden;
+    max-height: 125px;
+
 }
 
 .img {
@@ -159,3 +182,15 @@ input{
   width: 100px;
   height: 100px;
 }
+
+.crop {
+        width: 200px;
+        height: 150px;
+        overflow: hidden;
+    }
+
+    .crop img {
+        width: 400px;
+        height: 300px;
+        margin: -75px 0 0 -100px;
+    }

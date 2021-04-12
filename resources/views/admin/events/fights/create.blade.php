@@ -39,6 +39,12 @@
                                 @endforeach
                             </select>
                         </div>
+
+                        <div class="form-group">
+                            <label for="order">Order</label>
+                            <input type="text" class="form-control" id="order" name="order" value="{{ old('order') }}" />
+                        </div>
+
                         <a href="{{ route('admin.events.show', $event->id) }}" class="btn btn-default">cancel</a>
                         <button type="submit" class="btn btn-primary pull-right">Submit</button>
 

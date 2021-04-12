@@ -53,7 +53,93 @@
                 </div>
             </div>
         </div>
+
+
+
+
+
+
+
+        @foreach ($events as $event)
+
+
+        <div class="col-12">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-2" style="text-align: center; padding: 70px 0;">
+                        <a href="{{ route('admin.events.show', $event->id) }}">
+                            <h6a class="card-title">{{ $event->subName }}</h6a>
+                        </a>
+                    </div>
+                    {{-- <div class="col-4">
+                        <a href="{{ route('admin.events.show', $event->id) }}">
+                    <div class="img-container">
+                        <img class="img" src="{{ $event->pictureEvent }}" alt="Card image cap">
+                    </div>
+                    </a>
+                </div> --}}
+
+                <div class="col-2" style="padding: 30px 0;">
+                    <a href="{{ route('admin.events.show', $event->id) }}">
+                        <div class="img-container">
+                            <img class="img" src="https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2020-07/USMAN_KAMARU_BELT_12-14.png?NSoAkdZuXUW8AhuE85wvkymyMx1YagsE&itok=RTU-BFyz" alt="Card image cap">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-2" style="padding: 30px 0;">
+                    <a href="{{ route('admin.events.show', $event->id) }}">
+                        <div class="img-container">
+                            <img class="img" src="https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2020-07/MASVIDAL_JORGE_03-16.png?.pzUNaqDSeSW1i7mi2rhuuYoYd1dY6cw&itok=e_K25xuq" alt="Card image cap">
+                        </div>
+                    </a>
+                </div>
+
+                <br>
+
+                <div class="col-4" style="text-align: center; padding: 30px 0;">
+
+                    <h6a class="card-title">{{ $event->nameEvent }}</h6a>
+                    <h6 style="color:black;">{{ $event->location }}</h6>
+
+
+                    <h6 style="color:black;">{{ $event->startTime }} / {{ $event->dateEvent }}</h6>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div>
+            {{-- spacer --}}
+            <br><br>
+        </div>
+
+
+        <div class="bottomTest2">
+            <a href="{{ route('admin.events.show', $event->id) }}" class="btn btn-dark">View</a>
+            <a href="{{ route('admin.events.edit', $event->id) }}" class="btn btn-outline-dark">Edit</a>
+            <form style="display:inline-block" method="POST" action="{{ route('admin.events.destroy', $event->id) }}">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <button type="submit" class="form-control btn btn-danger">Delete</button>
+            </form>
+        </div>
     </div>
+
+
+
+</div>
+
+@endforeach
+
+
+
+
+
+
+</div>
 </div>
 @endsection
 @section('footer')
