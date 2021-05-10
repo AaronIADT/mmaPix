@@ -107,13 +107,15 @@
                     </table> --}}
 
 
+
+
                     <div class="row">
                         <div class="col-3">
                             <h5a>STANDING: </h5a>
                         </div>
                         <div class="col-8" style=" padding-top: 10px">
                             <div class="progress mb-3" style="height: 10px">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div id="myNumber" class="progress-bar bg-danger" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                     </div>

@@ -51,8 +51,8 @@
 @foreach ($events as $event)
 
 
-<div class="col-12">
-    <div class="card-body">
+<div class="card test">
+    <div class="card-body card1 test">
         <div class="row">
             <div class="col-2" style="text-align: center; padding: 70px 0;">
                 <a href="{{ route('user.events.show', $event->id) }}">

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-4">
-            <div class="card">
+            <div class="card test">
                 <div>
                     <img class="img" src="{{ $fighter->picfighter }}" alt="Card image cap">
                 </div>
@@ -12,13 +12,13 @@
         </div>
         <div class="col-md-8">
 
-            <div class="card">
-                <div class="card-header">
-                    <h6a>{{ $fighter->name }}</h6a>
+            <div class="card test">
+                <div class="card-header test">
+                    <h2a>{{ $fighter->name }}</h2a>
                 </div>
 
 
-                <div class="card-body">
+                <div class="card-body test">
 
 
                     <div class="row">
@@ -31,6 +31,8 @@
 
                     </div>
 
+                    <hr>
+
                     <div class="row">
                         <div class="col-3">
                             <h5a>Height:</h5a>
@@ -41,6 +43,7 @@
 
                     </div>
 
+                    <hr>
                     <div class="row">
                         <div class="col-3">
                             <h5a>Weight:</h5a>
@@ -50,7 +53,7 @@
                         </div>
 
                     </div>
-
+                    <hr>
                     <div class="row">
                         <div class="col-3">
                             <h5a>Reach:</h5a>
@@ -60,7 +63,7 @@
                         </div>
 
                     </div>
-
+                    <hr>
                     <div class="row">
                         <div class="col-3">
                             <h5a>Record:</h5a>
@@ -104,7 +107,7 @@
 
                     </tbody>
                     </table> --}}
-
+                    <hr>
 
                     <div class="row">
                         <div class="col-3">
