@@ -66,15 +66,20 @@ Route::put('/admin/events/{id}', [AdminEventController::class, 'update'])->name(
 Route::delete('/admin/events/{id}', [AdminEventController::class, 'destroy'])->name('admin.events.destroy');
 
 
-//EVENTS PICKS USER
+//PICKS USER
 Route::get('/user/picks/', [UserPickController::class, 'index'])->name('user.picks.index');
+Route::get('/user/events/{id}/picks/store', [UserPickController::class, 'create'])->name('user.picks.create');
 Route::get('/user/picks/{id}', [UserPickController::class, 'show'])->name('user.picks.show');
+Route::post('/user/events/{id}/picks/store', [UserPickController::class, 'store'])->name('user.picks.store');
+Route::get('/user/picks/{id}/edit', [UserPickController::class, 'edit'])->name('user.picks.edit');
+Route::put('/user/picks/{id}', [UserPickController::class, 'update'])->name('user.picks.update');
+Route::delete('/user/picks/{id}', [UserPickController::class, 'destroy'])->name('user.picks.destroy');
 
-//EVENTS PICKS ADMIN
+//PICKS ADMIN
 Route::get('/admin/picks/', [AdminPickController::class, 'index'])->name('admin.picks.index');
-Route::get('/admin/picks/create', [AdminPickController::class, 'create'])->name('admin.picks.create');
+Route::get('/admin/events/{id}/picks/store', [AdminPickController::class, 'create'])->name('admin.picks.create');
 Route::get('/admin/picks/{id}', [AdminPickController::class, 'show'])->name('admin.picks.show');
-Route::post('/admin/picks/store', [AdminPickController::class, 'store'])->name('admin.picks.store');
+Route::post('/admin/events/{id}/picks/store', [AdminPickController::class, 'store'])->name('admin.picks.store');
 Route::get('/admin/picks/{id}/edit', [AdminPickController::class, 'edit'])->name('admin.picks.edit');
 Route::put('/admin/picks/{id}', [AdminPickController::class, 'update'])->name('admin.picks.update');
 Route::delete('/admin/picks/{id}', [AdminPickController::class, 'destroy'])->name('admin.picks.destroy');

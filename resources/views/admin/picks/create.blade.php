@@ -6,11 +6,11 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="card">
                 <div class="card-header">
-                    Add new Event
+                    {{$event->nameEvent}}: Add new Pick
                 </div>
 
 
-                <div class="card-body">
+                <div class="panel-body">
                     @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -20,40 +20,104 @@
                         </ul>
                     </div>
                     @endif
-                    <form method="POST" action="{{ route('admin.events.store') }}">
+                    <form method="POST" action="{{ route('admin.picks.store', $event->id) }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group">
-                            <label for="title">Name Event</label>
-                            <input type="text" class="form-control" id="nameEvent" name="nameEvent" value="{{ old('nameEvent') }}" />
+                            <label for="fighter_id1">Fighter pick 1: </label>
+                            <select name="fighter_id1">
+                                @foreach ($fighters as $fighter)
+                                <option value="{{ $fighter->id }}">{{ $fighter->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
+
                         <div class="form-group">
-                            <label for="title">Main Event</label>
-                            <input type="text" class="form-control" id="subName" name="subName" value="{{ old('subName') }}" />
+                            <label for="fighter_id2">Fighter pick 2: </label>
+                            <select name="fighter_id2">
+                                @foreach ($fighters as $fighter)
+                                <option value="{{ $fighter->id }}">{{ $fighter->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
+
                         <div class="form-group">
-                            <label for="title">Location</label>
-                            <input type="text" class="form-control" id="location" name="location" value="{{ old('location') }}" />
+                            <label for="fighter_id3">Fighter pick 3: </label>
+                            <select name="fighter_id3">
+                                @foreach ($fighters as $fighter)
+                                <option value="{{ $fighter->id }}">{{ $fighter->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
+
                         <div class="form-group">
-                            <label for="title">Start time</label>
-                            <input type="text" class="form-control" id="startTime" name="startTime" value="{{ old('startTime') }}" />
+                            <label for="fighter_id4">Fighter pick 4: </label>
+                            <select name="fighter_id4">
+                                @foreach ($fighters as $fighter)
+                                <option value="{{ $fighter->id }}">{{ $fighter->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
+
                         <div class="form-group">
-                            <label for="title">Date of Event</label>
-                            <input type="text" class="form-control" id="dateEvent" name="dateEvent" value="{{ old('dateEvent') }}" />
+                            <label for="fighter_id5">Fighter pick 5: </label>
+                            <select name="fighter_id5">
+                                @foreach ($fighters as $fighter)
+                                <option value="{{ $fighter->id }}">{{ $fighter->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
+
                         <div class="form-group">
-                            <label for="title">Event Pic link</label>
-                            <input type="text" class="form-control" id="pictureEvent" name="pictureEvent" value="{{ old('pictureEvent') }}" />
+                            <label for="fighter_id6">Fighter pick 6: </label>
+                            <select name="fighter_id6">
+                                @foreach ($fighters as $fighter)
+                                <option value="{{ $fighter->id }}">{{ $fighter->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
+
                         <div class="form-group">
-                            <label for="title">Logo pic link</label>
-                            <input type="text" class="form-control" id="logoEvent" name="logoEvent" value="{{ old('logoEvent') }}" />
+                            <label for="fighter_id7">Fighter pick 7: </label>
+                            <select name="fighter_id7">
+                                @foreach ($fighters as $fighter)
+                                <option value="{{ $fighter->id }}">{{ $fighter->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
-                        <div class="float-right">
-                            <a href="{{ route('admin.events.index') }}" class="btn btn-default">Cancel</a>
-                            <button type="submit" class="btn btn-primary pull-right">Submit</button>
+
+                        <div class="form-group">
+                            <label for="fighter_id8">Fighter pick 8: </label>
+                            <select name="fighter_id8">
+                                @foreach ($fighters as $fighter)
+                                <option value="{{ $fighter->id }}">{{ $fighter->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
+
+                        <div class="form-group">
+                            <label for="fighter_id9">Fighter pick 9: </label>
+                            <select name="fighter_id9">
+                                @foreach ($fighters as $fighter)
+                                <option value="{{ $fighter->id }}">{{ $fighter->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fighter_id10">Fighter pick 10: </label>
+                            <select name="fighter_id10">
+                                @foreach ($fighters as $fighter)
+                                <option value="{{ $fighter->id }}">{{ $fighter->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+
+                        <a href="{{ route('admin.events.show', $event->id) }}" class="btn btn-default">cancel</a>
+                        <button type="submit" class="btn btn-primary pull-right">Submit</button>
+
+
+
                     </form>
                 </div>
             </div>

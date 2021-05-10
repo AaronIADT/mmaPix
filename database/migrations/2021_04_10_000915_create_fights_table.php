@@ -19,10 +19,11 @@ class CreateFightsTable extends Migration
             $table->unsignedbigInteger('fighter_id_1')->unsigned();
             $table->unsignedbigInteger('fighter_id_2')->unsigned();
             $table->string('order');
+            $table->string('weightClass');
             $table->timestamps();
 
 
-            $table->foreign('event_id')->references('id')->on('events')->onUpdate('cascade')->onDelete('restrict');
+            $table->foreign('event_id')->references('id')->on('events')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('fighter_id_1')->references('id')->on('fighters')->onUpdate('cascade')->onDelete('restrict');
             $table->foreign('fighter_id_2')->references('id')->on('fighters')->onUpdate('cascade')->onDelete('restrict');
         });

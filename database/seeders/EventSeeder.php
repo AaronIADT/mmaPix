@@ -20,18 +20,18 @@ class EventSeeder extends Seeder
         $event->location = 'VyStar Veterans Memorial Arena Jacksonville, FL United States';
         $event->startTime = '3:00 AM IST';
         $event->dateEvent = 'Sun, Apr 25';
-        $event->pictureEvent = 'https://dmxg5wxfqgb4u.cloudfront.net/image/2021-03/1134034633_261_BoutAnn_KU-JM_1200x675_Eng.jpg?null=';
-        $event->logoEvent = 'test';
+        $event->pictureEvent = 'https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2020-07/USMAN_KAMARU_BELT_12-14.png?NSoAkdZuXUW8AhuE85wvkymyMx1YagsE&itok=RTU-BFyz';
+        $event->logoEvent = 'https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2020-07/MASVIDAL_JORGE_03-16.png?.pzUNaqDSeSW1i7mi2rhuuYoYd1dY6cw&itok=e_K25xuq';
         $event->save();
 
         $event = new Event();
-        $event->nameEvent = 'VETTORI VS HOLLAND';
-        $event->subName = 'UFC 262';
+        $event->nameEvent = 'REYES VS PROCHAZKA';
+        $event->subName = 'FN 125';
         $event->location = 'America';
         $event->startTime = '3:00 AM IST';
-        $event->dateEvent = 'Sun, Apr 25';
-        $event->pictureEvent = 'https://dmxg5wxfqgb4u.cloudfront.net/image/2021-03/1134034633_261_BoutAnn_KU-JM_1200x675_Eng.jpg?null=';
-        $event->logoEvent = 'test';
+        $event->dateEvent = 'Sun, May 2';
+        $event->pictureEvent = 'https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2020-09/REYES_DOMINICK_10-18.png?BEYF1Pv4vI4XHTgspkinkDhFrMYipA9n&itok=CBWJbyHR';
+        $event->logoEvent = 'https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2020-07/PROCHAZKA_JIRI_07-11.png?Ja1Tl7uwpxCxlbZDUPTg9eZ_cbVJA5Iy&itok=LrP-FaHm';
         $event->save();
 
 

@@ -42,7 +42,38 @@
 
                         <div class="form-group">
                             <label for="order">Order</label>
-                            <input type="text" class="form-control" id="order" name="order" value="{{ old('order') }}" />
+                            {{-- <input type="text" class="form-control" id="order" name="order" value="{{ old('order') }}" /> --}}
+
+                            <select name="order">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="weightClass">Order</label>
+                            {{-- <input type="text" class="form-control" id="order" name="order" value="{{ old('order') }}" /> --}}
+                            <select name="weightClass">
+                                <option value="FLYWEIGHT">FLYWEIGHT</option>
+                                <option value="BANTAMWEIGHT">BANTAMWEIGHT</option>
+                                <option value="FEATHERWEIGHT">FEATHERWEIGHT</option>
+                                <option value="LIGHTWEIGHT">LIGHTWEIGHT</option>
+                                <option value="WELTERWEIGHT">WELTERWEIGHT</option>
+                                <option value="MIDDLEWEIGHT">MIDDLEWEIGHT</option>
+                                <option value="LIGHT HEAVYWEIGHT">LIGHT HEAVYWEIGHT</option>
+                                <option value="HEAVYWEIGHT">HEAVYWEIGHT</option>
+                                <option value="STRAWWEIGHT">STRAWWEIGHT</option>
+                            </select>
+
                         </div>
 
                         <a href="{{ route('admin.events.show', $event->id) }}" class="btn btn-default">cancel</a>

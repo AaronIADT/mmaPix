@@ -27,7 +27,7 @@
                         <div class="col-sm-4 card">
 
                             <div class="card-body">
-                                <a href="productPage.html">
+                                <a href="{{ route('admin.fighters.show', $fighter->id) }}">
                                     <h6a class="card-title">{{ $fighter->name }}</h6a>
                                 </a>
                                 <div class="img-container">

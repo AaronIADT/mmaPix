@@ -44,7 +44,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('user.fighters.index') }}" class="nav-link">
+                            <a href="{{ route('user.picks.index') }}" class="nav-link">
                                 MYPICKS
                             </a>
                         </li>
@@ -62,13 +62,13 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="signUp.html" class="nav-link">
+                            <a href="{{ route('user.home') }}" class="nav-link">
                                 LEAGUE
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="signUp.html" class="nav-link">
+                            <a href="{{ route('user.home') }}" class="nav-link">
                                 CONTACT
                             </a>
                         </li>

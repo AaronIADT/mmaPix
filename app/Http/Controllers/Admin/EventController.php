@@ -33,6 +33,7 @@ class EventController extends Controller
       $events = Event::all();
       $fights = Fight::all();
 
+
       return view('admin.events.index', [
         'events' => $events,
         'fights' => $fights
@@ -141,7 +142,7 @@ class EventController extends Controller
           'logoEvent' => 'required|max:191'
       ]);
 
-      $event = Fighter::findOrFail($id);
+      $event = Event::findOrFail($id);
 
       $event->nameEvent = $request->input('nameEvent');
       $event->subName = $request->input('subName');

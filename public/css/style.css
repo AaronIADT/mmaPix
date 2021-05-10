@@ -172,6 +172,14 @@ input{
 
 }
 
+.img-container-3 {
+    overflow: hidden;
+    max-height: 75px;
+
+}
+
+
+
 .img {
      width: 100%;
      height: auto;

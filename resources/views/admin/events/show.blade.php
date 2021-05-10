@@ -16,8 +16,7 @@
                     <div class="col-2" style="padding: 10px 0;">
                         <a href="{{ route('admin.events.show', $event->id) }}">
                             <div class="img-container2">
-                                <img class="img" src="https://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/2020-07/USMAN_KAMARU_L_BELT_12-14.png?FpNU3NDpXU4IePZMRmuuavs.dOw8Be.9&itok=MG1FCGbr"
-                                  alt="Card image cap">
+                                <img class="img" src="{{ $fight->fighterA->picfighter}}" alt="Card image cap">
                             </div>
                         </a>
                     </div>
@@ -32,7 +31,7 @@
 
                     <div class="col-4" style="text-align: center; padding: 10px 0;">
 
-                        <h6 class="card-title" style="text-align: center; padding: 15px 0" ;>WELTERWEIGHT TITLE BOUT</h6>
+                        <h6 class="card-title" style="text-align: center; padding: 15px 0;">{{ $fight->weightClass}}</h6>
                         <h4 style=" font-style: bold;">vs</h4>
 
                     </div>
@@ -46,8 +45,7 @@
                     <div class="col-2" style="padding: 10px 0;">
                         <a href="{{ route('admin.events.show', $event->id) }}">
                             <div class="img-container2">
-                                <img class="img" src="https://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/2020-07/MASVIDAL_JORGE_R_03-16.png?yprFrl4Kmku3xV.JHGFWCzDdt8NLud58&itok=seOclNxo"
-                                  alt="Card image cap">
+                                <img class="img" src="{{ $fight->fighterB->picfighter}}" alt="Card image cap">
                             </div>
                         </a>
                     </div>
@@ -70,40 +68,40 @@
                 </div>
 
                 <div class="card-body">
-                    <table class="table table-hover">
+                    {{-- <table class="table table-hover">
                         <tbody>
                             <tr>
                                 <td>Event Name</td>
                                 <td>{{ $event->nameEvent }}</td>
-                            </tr>
-                            <tr>
-                                <td>Main Event</td>
-                                <td>{{ $event->subName }}</td>
-                            </tr>
-                            <tr>
-                                <td>Location</td>
-                                <td>{{ $event->location }}</td>
-                            </tr>
-                            <tr>
-                                <td>Start Time</td>
-                                <td>{{ $event->startTime }}</td>
-                            </tr>
-                            <tr>
-                                <td>Date of Event</td>
-                                <td>{{ $event->dateEvent }}</td>
-                            </tr>
-                            <tr>
-                                <td>PictureLink1</td>
-                                <td>{{ $event->pictureEvent }}</td>
-                            </tr>
-                            <tr>
-                                <td>PictureLink2</td>
-                                <td>{{ $event->logoEvent }}</td>
-                            </tr>
+                    </tr>
+                    <tr>
+                        <td>Main Event</td>
+                        <td>{{ $event->subName }}</td>
+                    </tr>
+                    <tr>
+                        <td>Location</td>
+                        <td>{{ $event->location }}</td>
+                    </tr>
+                    <tr>
+                        <td>Start Time</td>
+                        <td>{{ $event->startTime }}</td>
+                    </tr>
+                    <tr>
+                        <td>Date of Event</td>
+                        <td>{{ $event->dateEvent }}</td>
+                    </tr>
+                    <tr>
+                        <td>PictureLink1</td>
+                        <td>{{ $event->pictureEvent }}</td>
+                    </tr>
+                    <tr>
+                        <td>PictureLink2</td>
+                        <td>{{ $event->logoEvent }}</td>
+                    </tr>
 
 
-                        </tbody>
-                    </table>
+                    </tbody>
+                    </table> --}}
 
                     <a href="{{ route('admin.events.index') }}" class="btn btn-default">Back</a>
 
@@ -117,9 +115,9 @@
                     </form>
 
 
-
                 </div>
                 <a href="{{ route('admin.fights.create', $event->id) }}" class="btn btn-dark">Add Fight</a>
+                <a href="{{ route('admin.picks.create', $event->id) }}" class="btn btn-light">Add Pick</a>
             </div>
         </div>
 

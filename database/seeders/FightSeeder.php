@@ -18,14 +18,15 @@ class FightSeeder extends Seeder
      public function run()
      {
        $event261 = Event::where('nameEvent', "Usman VS Masvidal")->first();
-       $fighter1 = Fighter::where('name', "Conor McGregor")->first();
-       $fighter2 = Fighter::where('name', "Tony Ferguson")->first();
+       $fighter1 = Fighter::where('name', "Kamaru Usman")->first();
+       $fighter2 = Fighter::where('name', "Jorge Masvidal")->first();
 
        $fight = new Fight();
        $fight->event_id = $event261->id;
        $fight->fighter_id_1 = $fighter1->id;
        $fight->fighter_id_2 = $fighter2->id;
        $fight->order = '1st';
+       $fight->weightClass = 'WELTERWEIGHT';
        $fight->save();
 
 

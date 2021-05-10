@@ -44,7 +44,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('admin.fighters.index') }}" class="nav-link">
+                            <a href="{{ route('admin.picks.index') }}" class="nav-link">
                                 MYPICKS
                             </a>
                         </li>

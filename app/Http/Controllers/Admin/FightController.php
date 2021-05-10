@@ -58,6 +58,7 @@ class FightController extends Controller
         $fight->fighter_id_1 = $request->input('fighter_id_1');
         $fight->fighter_id_2 = $request->input('fighter_id_2');
         $fight->order = $request->input('order');
+        $fight->weightClass = $request->input('weightClass');
         $fight->save();
 
 
@@ -106,6 +107,9 @@ class FightController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $fight = Fighter::findOrFail($id);
+      $fight->delete();
+
+      return redirect()->route('admin.events.index');
     }
 }

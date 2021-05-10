@@ -4,6 +4,11 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Pick;
+use App\Models\Event;
+use App\Models\Fight;
+use App\Models\Fighter;
+use Auth;
 
 class PickController extends Controller
 {
@@ -25,10 +30,13 @@ class PickController extends Controller
      */
     public function index()
     {
-      $picks = Pick::all();
+      // $user = Auth::user();
+      // $picks = Pick::all();
+      $picks = Pick::where('user_id',auth()->id())->get();
 
       return view('user.picks.index', [
         'picks' => $picks
+        // 'user' => $user
       ]);
     }
 
@@ -37,9 +45,25 @@ class PickController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('user.picks.create');
+      $event = Event::findOrFail($id);
+
+    //  $fights = Fight::all();
+      $fights = Fight::where('event_id', $id)->get();
+
+      $fight1 = Fight::where('event_id', $id)->where('id', 1)->get();
+
+
+      $fighters = Fighter::all();
+    //  $fighters = Fighter::all();
+
+      return view('user.picks.create', [
+        'event' => $event,
+        'fights' => $fights,
+        'fighters' => $fighters,
+        'fight1' => $fight1
+      ]);
     }
 
     /**
@@ -48,34 +72,25 @@ class PickController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-      $request->validate([
-          'fight1' => 'required|max:191',
-          'fight2' => 'required|max:191',
-          'fight3' => 'required|max:191',
-          'fight4' => 'required|max:191',
-          'fight5' => 'required|max:191',
-          'fight6' => 'required|max:191',
-          'fight7' => 'required|max:191',
-          'fight8' => 'required|max:191',
-          'fight9' => 'required|max:191',
-          'fight10' => 'required|max:191',
-      ]);
 
+      $user = Auth::user();
 
       $pick = new Pick();
 
-      $pick->fight1 = $request->input('fight1');
-      $pick->fight2 = $request->input('fight2');
-      $pick->fight3 = $request->input('fight3');
-      $pick->fight4 = $request->input('fight4');
-      $pick->fight5 = $request->input('fight5');
-      $pick->fight6 = $request->input('fight6');
-      $pick->fight7 = $request->input('fight7');
-      $pick->fight8 = $request->input('fight8');
-      $pick->fight9 = $request->input('fight9');
-      $pick->fight10 = $request->input('fight10');
+      $pick->user_id = $user->id;
+      $pick->event_id = $id;
+      $pick->fighter_id1 = $request->input('fighter_id1');
+      $pick->fighter_id2 = $request->input('fighter_id2');
+      $pick->fighter_id3 = $request->input('fighter_id3');
+      $pick->fighter_id4 = $request->input('fighter_id4');
+      $pick->fighter_id5 = $request->input('fighter_id5');
+      $pick->fighter_id6 = $request->input('fighter_id6');
+      $pick->fighter_id7 = $request->input('fighter_id7');
+      $pick->fighter_id8 = $request->input('fighter_id8');
+      $pick->fighter_id9 = $request->input('fighter_id9');
+      $pick->fighter_id10 = $request->input('fighter_id10');
 
       $pick->save();
 
@@ -105,7 +120,11 @@ class PickController extends Controller
      */
     public function edit($id)
     {
+      $pick = Pick::findOrFail($id);
 
+      return view('user.picks.edit', [
+        'pick' => $pick
+      ]);
     }
 
     /**
@@ -117,7 +136,22 @@ class PickController extends Controller
      */
     public function update(Request $request, $id)
     {
+      $pick = Pick::findOrFail($id);
 
+      $pick->fight1 = $request->input('fight1');
+      $pick->fight2 = $request->input('fight2');
+      $pick->fight3 = $request->input('fight3');
+      $pick->fight4 = $request->input('fight4');
+      $pick->fight5 = $request->input('fight5');
+      $pick->fight6 = $request->input('fight6');
+      $pick->fight7 = $request->input('fight7');
+      $pick->fight8 = $request->input('fight8');
+      $pick->fight9 = $request->input('fight9');
+      $pick->fight10 = $request->input('fight10');
+
+      $pick->save();
+
+      return redirect()->route('user.picks.index');
     }
 
     /**
@@ -128,6 +162,9 @@ class PickController extends Controller
      */
     public function destroy($id)
     {
+      $pick = Pick::findOrFail($id);
+      $pick->delete();
 
+      return redirect()->route('user.picks.index');
     }
 }

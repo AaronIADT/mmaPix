@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appUser')
 
 @section('content')
 <div class="container">
@@ -55,23 +55,23 @@
     <div class="card-body">
         <div class="row">
             <div class="col-2" style="text-align: center; padding: 70px 0;">
-                <a href="{{ route('admin.events.show', $event->id) }}">
+                <a href="{{ route('user.events.show', $event->id) }}">
                     <h6a class="card-title">{{ $event->subName }}</h6a>
                 </a>
             </div>
 
 
             <div class="col-2" style="padding: 30px 0;">
-                <a href="{{ route('admin.events.show', $event->id) }}">
+                <a href="{{ route('user.events.show', $event->id) }}">
                     <div class="img-container">
-                        <img class="img" src="https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2020-07/USMAN_KAMARU_BELT_12-14.png?NSoAkdZuXUW8AhuE85wvkymyMx1YagsE&itok=RTU-BFyz" alt="Card image cap">
+                        <img class="img" src="{{ $event->pictureEvent }}" alt="Card image cap">
                     </div>
                 </a>
             </div>
             <div class="col-2" style="padding: 30px 0;">
-                <a href="{{ route('admin.events.show', $event->id) }}">
+                <a href="{{ route('user.events.show', $event->id) }}">
                     <div class="img-container">
-                        <img class="img" src="https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2020-07/MASVIDAL_JORGE_03-16.png?.pzUNaqDSeSW1i7mi2rhuuYoYd1dY6cw&itok=e_K25xuq" alt="Card image cap">
+                        <img class="img" src="{{ $event->logoEvent }}" alt="Card image cap">
                     </div>
                 </a>
             </div>

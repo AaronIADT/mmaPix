@@ -16,17 +16,17 @@ class CreatePicksTable extends Migration
         Schema::create('picks', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('fight_id')->unsigned();
-            $table->string('fighter_id1');
-            $table->string('fighter_id2');
-            $table->string('fighter_id3');
-            $table->string('fighter_id4');
-            $table->string('fighter_id5');
-            $table->string('fighter_id6');
-            $table->string('fighter_id7');
-            $table->string('fighter_id8');
-            $table->string('fighter_id9');
-            $table->string('fighter_id10');
+            $table->bigInteger('event_id')->unsigned();
+            $table->bigInteger('fighter_id1')->unsigned();
+            $table->bigInteger('fighter_id2')->unsigned();
+            $table->bigInteger('fighter_id3')->unsigned();
+            $table->bigInteger('fighter_id4')->unsigned();
+            $table->bigInteger('fighter_id5')->unsigned();
+            $table->bigInteger('fighter_id6')->unsigned();
+            $table->bigInteger('fighter_id7')->unsigned();
+            $table->bigInteger('fighter_id8')->unsigned();
+            $table->bigInteger('fighter_id9')->unsigned();
+            $table->bigInteger('fighter_id10')->unsigned();
             // $table->string('fight2');
             // $table->string('fight3');
             // $table->string('fight4');
@@ -36,11 +36,10 @@ class CreatePicksTable extends Migration
             // $table->string('fight8');
             // $table->string('fight9');
             // $table->string('fight10');
-            $table->string('userTag');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');
-            $table->foreign('fight_id')->references('id')->on('fights')->onUpdate('cascade')->onDelete('restrict');
+            $table->foreign('event_id')->references('id')->on('events')->onUpdate('cascade')->onDelete('restrict');
             $table->foreign('fighter_id1')->references('id')->on('fighters')->onUpdate('cascade')->onDelete('restrict');
             $table->foreign('fighter_id2')->references('id')->on('fighters')->onUpdate('cascade')->onDelete('restrict');
             $table->foreign('fighter_id3')->references('id')->on('fighters')->onUpdate('cascade')->onDelete('restrict');
