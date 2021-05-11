@@ -28,34 +28,63 @@
                         <a href="{{ route('user.fighters.index') }}">
                             <h6a class="card-title">{{ $fight->fighterA->name}}</h6a>
                         </a>
-                        <br>
-                        <br>
-                        <h7 style=" font-style: bold;">{{ $fight->odds1}}</h7>
-                    </div>
-                    <div class="col-1" style="text-align: center; padding: 10px 0;">
 
                     </div>
+                    <div class="col-1" style="text-align: center; padding: 10px 0;">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <h7 class="statMenuText" style=" font-style: bold; padding-left: 75px">{{ $fight->fighterA->age}}</h7>
+                        <br>
+                        <h7 class="statMenuText" style=" font-style: bold; padding-left: 75px">{{ $fight->fighterA->height}}"</h7>
+                        <br>
+                        <h7 class="statMenuText" style=" font-style: bold; padding-left: 45px">{{ $fight->fighterA->reach}}</h7>
+                        <br>
+                        <br>
+                        <h7 class="statMenuText" style=" font-style: bold; padding-left: 55px">{{ $fight->odds1}}</h7>
+                    </div>
+
 
                     <div class="col-4" style="text-align: center; padding: 10px 0;">
 
-                        <h6 class="card-title" style="text-align: center; padding: 15px 0" ;>{{ $fight->weightClass}}</h6>
+                        <h6 class="card-title weightText" style="text-align: center; padding: 15px 0" ;>{{ $fight->weightClass}}</h6>
+                        <h4 class="VSText" style=" font-style: bold;">- vs -</h4>
                         <br>
-                        <h4 style=" font-style: bold;">- vs -</h4>
-
+                        <h7 class="statMenuText" style=" font-style: bold; text-align: left;">AGE</h7>
                         <br>
-                        <h7 style=" font-style: bold;">ODDS</h7>
+                        <h7 class="statMenuText" style=" font-style: bold;">HEIGHT</h7>
+                        <br>
+                        <h7 class="statMenuText" style=" font-style: bold;">REACH</h7>
+                        <br>
+                        <br>
+                        <h7 class="statMenuText" style=" font-style: bold;">ODDS</h7>
 
                     </div>
+
+
                     <div class="col-1" style="text-align: center; padding: 10px 0;">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <h7 class="statMenuText" style=" font-style: bold; padding-right: 200px">{{ $fight->fighterB->age}}</h7>
+                        <br>
+                        <h7 class="statMenuText" style=" font-style: bold; padding-right: 200px">{{ $fight->fighterB->height}}"</h7>
+                        <br>
+                        <h7 class="statMenuText" style=" font-style: bold; padding-right: 48px">{{ $fight->fighterB->reach}}</h7>
+                        <br>
+                        <br>
+                        <h7 class="statMenuText" style=" font-style: bold; padding-right: 200px">{{ $fight->odds2}}</h7>
                     </div>
+
                     <div class="col-1" style="text-align: center; padding: 10px 0;">
                         <br>
                         <a href="{{ route('user.fighters.index') }}">
                             <h6a class="card-title">{{ $fight->fighterB->name}}</h6a>
                         </a>
-                        <br>
-                        <br>
-                        <h7 style=" font-style: bold;">{{ $fight->odds2}}</h7>
                     </div>
 
                     <div class="col-2" style="padding: 10px 0;">
@@ -73,9 +102,11 @@
             </div>
 
 
-            <hr>
+
 
         </div>
+
+        <hr>
         @endforeach
         @endif
         <div class="col-md-12 col-md-offset-2">

@@ -157,7 +157,7 @@
                     <h5a>{{ $pick->pick1->name }}</h5a>
                     <h5>{{ $pick->pick1->record }}</h5>
                     <h5>{{ $pick->pick1->weight }}</h5>
-                    <h5>WINNER</h5>
+                    <h5 class="textCorrect">WINNER</h5>
 
                 </div>
                 <div class="col-4">
@@ -240,7 +240,7 @@
                     <h5a>{{ $pick->pick2->name }}</h5a>
                     <h5>{{ $pick->pick2->record }}</h5>
                     <h5>{{ $pick->pick2->weight }}</h5>
-                    <h5>WINNER</h5>
+                    <h5 class="textCorrect">WINNER</h5>
 
                 </div>
                 <div class="col-4">
@@ -321,7 +321,7 @@
                     <h5a>{{ $pick->pick3->name }}</h5a>
                     <h5>{{ $pick->pick3->record }}</h5>
                     <h5>{{ $pick->pick3->weight }}</h5>
-                    <h5>WINNER</h5>
+                    <h5 class="textCorrect">WINNER</h5>
 
                 </div>
                 <div class="col-4">
@@ -346,7 +346,7 @@
                     <h5a>{{ $pick->pick3->name }}</h5a>
                     <h5>{{ $pick->pick3->record }}</h5>
                     <h5>{{ $pick->pick3->weight }}</h5>
-                    <h5>LOSER</h5>
+                    <h5 class="textWrong">LOSER</h5>
 
                 </div>
                 <div class="col-4">
