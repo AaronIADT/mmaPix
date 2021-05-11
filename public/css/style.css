@@ -60,6 +60,10 @@ ul#menu li {
     padding: 15px;
 }
 
+h7{
+  color: grey;
+}
+
 h5a{
     color: black;
     font-size: 22px;
@@ -94,7 +98,7 @@ h2a{
 
 h5a{
     color: black;
-    font-size: 22px;
+    font-size: 20px;
     font-family: 'Bebas Neue', cursive;
     text-align: center;
 
@@ -183,7 +187,18 @@ input{
 
 .img-container2 {
     overflow: hidden;
-    max-height: 125px;
+    max-height: 150px;
+
+
+
+}
+
+.img-container4 {
+    overflow: hidden;
+    /* max-height: 150px; */
+    height: 15%;
+    width: 15%;
+    float: right;
 
 }
 
@@ -213,6 +228,16 @@ input{
       transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
   padding: 30px 5px 30px 5px;
   cursor: pointer;
+}
+
+
+/* color changing divs based on result */
+.pickcorrect{
+  background: #1adb00;
+}
+
+.pickwrong{
+  background: #db0000;
 }
 
 .card1:hover{

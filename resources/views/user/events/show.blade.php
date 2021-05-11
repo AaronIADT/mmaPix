@@ -30,7 +30,7 @@
                         </a>
                         <br>
                         <br>
-                        <h7 style=" font-style: bold;">-127</h7>
+                        <h7 style=" font-style: bold;">{{ $fight->odds1}}</h7>
                     </div>
                     <div class="col-1" style="text-align: center; padding: 10px 0;">
 
@@ -39,10 +39,11 @@
                     <div class="col-4" style="text-align: center; padding: 10px 0;">
 
                         <h6 class="card-title" style="text-align: center; padding: 15px 0" ;>{{ $fight->weightClass}}</h6>
+                        <br>
                         <h4 style=" font-style: bold;">- vs -</h4>
+
                         <br>
-                        <br>
-                        <h6 style=" font-style: bold;">ODDS</h6>
+                        <h7 style=" font-style: bold;">ODDS</h7>
 
                     </div>
                     <div class="col-1" style="text-align: center; padding: 10px 0;">
@@ -54,7 +55,7 @@
                         </a>
                         <br>
                         <br>
-                        <h7 style=" font-style: bold;">+156</h7>
+                        <h7 style=" font-style: bold;">{{ $fight->odds2}}</h7>
                     </div>
 
                     <div class="col-2" style="padding: 10px 0;">

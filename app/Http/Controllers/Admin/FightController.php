@@ -59,6 +59,8 @@ class FightController extends Controller
         $fight->fighter_id_2 = $request->input('fighter_id_2');
         $fight->order = $request->input('order');
         $fight->weightClass = $request->input('weightClass');
+        $fight->odds1 = $request->input('odds1');
+        $fight->odds2 = $request->input('odds2');
         $fight->save();
 
 

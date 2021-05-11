@@ -119,7 +119,7 @@
     @endif
 </div>
 </div> --}}
-
+<h2a>Your Picks</h2a>
 @if (count($picks) === 0)
 <p>There are no picks</p>
 @else
@@ -127,125 +127,425 @@
 
 @foreach ($picks as $pick)
 
-<hr>
-<h6a>Your Picks</h6a>
-<h6a>{{ $pick->event->subName }} - {{ $pick->event->nameEvent }}</h6a>
-<div class="row">
+
+
+<div class="container">
+    <hr>
+    <br>
+    <div style="text-align: center;">
+        <h2a>{{ $pick->event->subName }} - {{ $pick->event->nameEvent }}</h2a>
+    </div>
+    <br>
+
+
+
     @if ($pick->fighter_id1)
-    <div class="col-2">
-        <br>
-        <h3>Pick 1:</h3>
-        <h3>{{ $pick->pick1->name }}</h3>
-        <br>
-        <div class="img-container2">
-            <img class="img" src="{{ $pick->pick1->picfighter }}">
+    <div class="row">
+
+        @foreach ($picksAdmin as $picksA)
+
+        {{-- IF WINNER CHECK --}}
+        @if ($picksA->event_id == $pick->event_id && $picksA->pick1->name == $pick->pick1->name)
+
+
+        <div class="col-6 card1">
+            <div class="row">
+
+                <div class="col-4">
+
+
+                    <h5a>{{ $pick->pick1->name }}</h5a>
+                    <h5>{{ $pick->pick1->record }}</h5>
+                    <h5>{{ $pick->pick1->weight }}</h5>
+                    <h5>WINNER</h5>
+
+                </div>
+                <div class="col-4">
+                    <br>
+
+                </div>
+
+                <div class="img-container4  pickcorrect">
+                    <img class="img" src="{{ $pick->pick1->picfighter }}">
+                </div>
+
+            </div>
         </div>
-        <br>
+
+        {{-- IF LOSER CHECK --}}
+        @elseif ($picksA->event_id == $pick->event_id && $picksA->pick1->name != $pick->pick1->name)
+        <div class="col-6 card1 pickwrong">
+            <div class="row">
+
+                <div class="col-4">
+
+
+                    <h5a>{{ $pick->pick1->name }}</h5a>
+                    <h5>{{ $pick->pick1->record }}</h5>
+                    <h5>{{ $pick->pick1->weight }}</h5>
+
+                </div>
+                <div class="col-4">
+                    <br>
+                </div>
+
+                <div class="img-container4">
+                    <img class="img" src="{{ $pick->pick1->picfighter }}">
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        @else
+        <div class="col-6 card1">
+            <div class="row">
+
+                <div class="col-4">
+
+
+                    <h5a>{{ $pick->pick1->name }}</h5a>
+                    <h5>{{ $pick->pick1->record }}</h5>
+                    <h5>{{ $pick->pick1->weight }}</h5>
+
+                </div>
+                <div class="col-4">
+                    <br>
+                </div>
+
+                <div class="img-container4">
+                    <img class="img" src="{{ $pick->pick1->picfighter }}">
+                </div>
+
+            </div>
+        </div>
+
+        @endif
+        @endforeach
+
+        @foreach ($picksAdmin as $picksA)
+
+
+        @if ($picksA->event_id == $pick->event_id && $picksA->pick2->name == $pick->pick2->name)
+
+
+        <div class="col-6 card1">
+            <div class="row">
+
+                <div class="col-4">
+
+
+                    <h5a>{{ $pick->pick2->name }}</h5a>
+                    <h5>{{ $pick->pick2->record }}</h5>
+                    <h5>{{ $pick->pick2->weight }}</h5>
+                    <h5>WINNER</h5>
+
+                </div>
+                <div class="col-4">
+                    <br>
+                </div>
+
+                <div class="img-container4  pickcorrect">
+                    <img class="img" src="{{ $pick->pick2->picfighter }}">
+                </div>
+
+            </div>
+        </div>
+
+        @elseif ($picksA->event_id == $pick->event_id && $picksA->pick2->name != $pick->pick2->name)
+        <div class="col-6 card1 pickwrong">
+            <div class="row">
+
+                <div class="col-4">
+
+
+                    <h5a>{{ $pick->pick2->name }}</h5a>
+                    <h5>{{ $pick->pick2->record }}</h5>
+                    <h5>{{ $pick->pick2->weight }}</h5>
+                    <h5>LOSER</h5>
+
+                </div>
+                <div class="col-4">
+                    <br>
+                </div>
+
+                <div class="img-container4">
+                    <img class="img" src="{{ $pick->pick2->picfighter }}">
+                </div>
+
+            </div>
+        </div>
+
+        @else
+        <div class="col-6 card1">
+            <div class="row">
+
+                <div class="col-4">
+
+
+                    <h5a>{{ $pick->pick2->name }}</h5a>
+                    <h5>{{ $pick->pick2->record }}</h5>
+                    <h5>{{ $pick->pick2->weight }}</h5>
+
+                </div>
+                <div class="col-4">
+                    <br>
+                </div>
+
+                <div class="img-container4">
+                    <img class="img" src="{{ $pick->pick2->picfighter }}">
+                </div>
+
+            </div>
+        </div>
+
+        @endif
+        @endforeach
     </div>
-    @elseif ($pick->fighter_id2)
-    <div class="col-2">
-        <br>
-        <h3>Pick 2:</h3>
-        <h3>{{ $pick->pick2->name }}</h3>
-        <br>
-        <div class="img-container2">
-            <img class="img" src="{{ $pick->pick2->picfighter }}">
+
+    <div class="row">
+        @foreach ($picksAdmin as $picksA)
+
+
+        @if ($picksA->event_id == $pick->event_id && $picksA->pick3->name == $pick->pick3->name)
+
+
+        <div class="col-6 card1 pickcorrect">
+            <div class="row">
+
+                <div class="col-4">
+
+
+                    <h5a>{{ $pick->pick3->name }}</h5a>
+                    <h5>{{ $pick->pick3->record }}</h5>
+                    <h5>{{ $pick->pick3->weight }}</h5>
+                    <h5>WINNER</h5>
+
+                </div>
+                <div class="col-4">
+                    <br>
+                </div>
+
+                <div class="img-container4">
+                    <img class="img" src="{{ $pick->pick3->picfighter }}">
+                </div>
+
+            </div>
         </div>
-        <br>
+
+
+        @elseif ($picksA->event_id == $pick->event_id && $picksA->pick3->name != $pick->pick3->name)
+        <div class="col-6 card1">
+            <div class="row">
+
+                <div class="col-4">
+
+
+                    <h5a>{{ $pick->pick3->name }}</h5a>
+                    <h5>{{ $pick->pick3->record }}</h5>
+                    <h5>{{ $pick->pick3->weight }}</h5>
+                    <h5>LOSER</h5>
+
+                </div>
+                <div class="col-4">
+                    <br>
+                </div>
+
+                <div class="img-container4 pickwrong">
+                    <img class="img" src="{{ $pick->pick3->picfighter }}">
+                </div>
+
+            </div>
+        </div>
+
+        @else
+        <div class="col-6 card1">
+            <div class="row">
+
+                <div class="col-4">
+
+
+                    <h5a>{{ $pick->pick3->name }}</h5a>
+                    <h5>{{ $pick->pick3->record }}</h5>
+                    <h5>{{ $pick->pick3->weight }}</h5>
+
+                </div>
+                <div class="col-4">
+                    <br>
+                </div>
+
+                <div class="img-container4">
+                    <img class="img" src="{{ $pick->pick3->picfighter }}">
+                </div>
+
+            </div>
+        </div>
+
+        @endif
+        @endforeach
+
+        <div class="col-6 card1">
+            <div class="row">
+
+                <div class="col-4">
+
+
+                    <h5a>{{ $pick->pick4->name }}</h5a>
+                    <h5>{{ $pick->pick4->record }}</h5>
+                    <h5>{{ $pick->pick4->weight }}</h5>
+                </div>
+                <div class="col-4">
+                    <br>
+                </div>
+
+                <div class="img-container4">
+                    <img class="img" src="{{ $pick->pick4->picfighter }}">
+                </div>
+
+            </div>
+        </div>
     </div>
-    @elseif ($pick->fighter_id3)
-    <div class="col-2">
-        <br>
-        <h3>Pick 3:</h3>
-        <h3>{{ $pick->pick3->name }}</h3>
-        <br>
-        <div class="img-container2">
-            <img class="img" src="{{ $pick->pick3->picfighter }}">
+
+    <div class="row">
+        <div class="col-6 card1">
+            <div class="row">
+
+                <div class="col-4">
+
+
+                    <h5a>{{ $pick->pick5->name }}</h5a>
+                    <h5>{{ $pick->pick5->record }}</h5>
+                    <h5>{{ $pick->pick5->weight }}</h5>
+                </div>
+                <div class="col-4">
+                    <br>
+                </div>
+
+                <div class="img-container4">
+                    <img class="img" src="{{ $pick->pick5->picfighter }}">
+                </div>
+
+            </div>
         </div>
-        <br>
+
+        <div class="col-6 card1">
+            <div class="row">
+
+                <div class="col-4">
+
+
+                    <h5a>{{ $pick->pick6->name }}</h5a>
+                    <h5>{{ $pick->pick6->record }}</h5>
+                    <h5>{{ $pick->pick6->weight }}</h5>
+                </div>
+                <div class="col-4">
+                    <br>
+                </div>
+
+                <div class="img-container4">
+                    <img class="img" src="{{ $pick->pick6->picfighter }}">
+                </div>
+
+            </div>
+        </div>
     </div>
-    @elseif ($pick->fighter_id4)
-    <div class="col-2">
-        <br>
-        <h3>Pick 4:</h3>
-        <h3>{{ $pick->pick4->name }}</h3>
-        <br>
-        <div class="img-container2">
-            <img class="img" src="{{ $pick->pick4->picfighter }}">
+
+    <div class="row">
+        <div class="col-6 card1">
+            <div class="row">
+
+                <div class="col-4">
+
+
+                    <h5a>{{ $pick->pick7->name }}</h5a>
+                    <h5>{{ $pick->pick7->record }}</h5>
+                    <h5>{{ $pick->pick7->weight }}</h5>
+                </div>
+                <div class="col-4">
+                    <br>
+                </div>
+
+                <div class="img-container4">
+                    <img class="img" src="{{ $pick->pick7->picfighter }}">
+                </div>
+
+            </div>
         </div>
-        <br>
+
+        <div class="col-6 card1">
+            <div class="row">
+
+                <div class="col-4">
+
+
+                    <h5a>{{ $pick->pick8->name }}</h5a>
+                    <h5>{{ $pick->pick8->record }}</h5>
+                    <h5>{{ $pick->pick8->weight }}</h5>
+                </div>
+                <div class="col-4">
+                    <br>
+                </div>
+
+                <div class="img-container4">
+                    <img class="img" src="{{ $pick->pick4->picfighter }}">
+                </div>
+
+            </div>
+        </div>
     </div>
-    @elseif ($pick->fighter_id5)
-    <div class="col-2">
-        <br>
-        <h3>Pick 5:</h3>
-        <h3>{{ $pick->pick5->name }}</h3>
-        <br>
-        <div class="img-container2">
-            <img class="img" src="{{ $pick->pick5->picfighter }}">
+
+    <div class="row">
+        <div class="col-6 card1">
+            <div class="row">
+
+                <div class="col-4">
+
+
+                    <h5a>{{ $pick->pick9->name }}</h5a>
+                    <h5>{{ $pick->pick9->record }}</h5>
+                    <h5>{{ $pick->pick9->weight }}</h5>
+                </div>
+                <div class="col-4">
+                    <br>
+                </div>
+
+                <div class="img-container4">
+                    <img class="img" src="{{ $pick->pick9->picfighter }}">
+                </div>
+
+            </div>
         </div>
-        <br>
-    </div>
-    @elseif ($pick->fighter_id6)
-    <div class="col-2">
-        <br>
-        <h3>Pick 6:</h3>
-        <h3>{{ $pick->pick6->name }}</h3>
-        <br>
-        <div class="img-container2">
-            <img class="img" src="{{ $pick->pick6->picfighter }}">
+
+        <div class="col-6 card1">
+            <div class="row">
+
+                <div class="col-4">
+
+
+                    <h5a>{{ $pick->pick10->name }}</h5a>
+                    <h5>{{ $pick->pick10->record }}</h5>
+                    <h5>{{ $pick->pick10->weight }}</h5>
+                </div>
+                <div class="col-4">
+                    <br>
+                </div>
+
+                <div class="img-container4">
+                    <img class="img" src="{{ $pick->pick10->picfighter }}">
+                </div>
+
+            </div>
         </div>
-        <br>
-    </div>
-    @elseif ($pick->fighter_id7)
-    <div class="col-2">
-        <br>
-        <h3>Pick 7:</h3>
-        <h3>{{ $pick->pick7->name }}</h3>
-        <br>
-        <div class="img-container2">
-            <img class="img" src="{{ $pick->pick7->picfighter }}">
-        </div>
-        <br>
-    </div>
-    @elseif ($pick->fighter_id8)
-    <div class="col-2">
-        <br>
-        <h3>Pick 8:</h3>
-        <h3>{{ $pick->pick8->name }}</h3>
-        <br>
-        <div class="img-container2">
-            <img class="img" src="{{ $pick->pick8->picfighter }}">
-        </div>
-        <br>
-    </div>
-    @elseif ($pick->fighter_id9)
-    <div class="col-2">
-        <br>
-        <h3>Pick 9:</h3>
-        <h3>{{ $pick->pick9->name }}</h3>
-        <br>
-        <div class="img-container2">
-            <img class="img" src="{{ $pick->pick9->picfighter }}">
-        </div>
-        <br>
-    </div>
-    @elseif ($pick->fighter_id10)
-    <div class="col-2">
-        <br>
-        <h3>Pick 10:</h3>
-        <h3>{{ $pick->pick10->name }}</h3>
-        <br>
-        <div class="img-container2">
-            <img class="img" src="{{ $pick->pick10->picfighter }}">
-        </div>
-        <br>
     </div>
 
 
     @endif
 
+
 </div>
+<hr>
 @endforeach
 
 

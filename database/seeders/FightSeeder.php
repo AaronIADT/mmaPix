@@ -25,8 +25,10 @@ class FightSeeder extends Seeder
        $fight->event_id = $event261->id;
        $fight->fighter_id_1 = $fighter1->id;
        $fight->fighter_id_2 = $fighter2->id;
-       $fight->order = '1st';
+       $fight->order = '1';
        $fight->weightClass = 'WELTERWEIGHT';
+       $fight->odds1 = '-127';
+       $fight->odds2 = '+156';
        $fight->save();
 
 

@@ -33,9 +33,11 @@ class PickController extends Controller
       // $user = Auth::user();
       // $picks = Pick::all();
       $picks = Pick::where('user_id',auth()->id())->get();
+      $picksAdmin = Pick::where('user_id', 1)->get();
 
       return view('user.picks.index', [
-        'picks' => $picks
+        'picks' => $picks,
+        'picksAdmin' => $picksAdmin
         // 'user' => $user
       ]);
     }

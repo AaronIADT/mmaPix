@@ -157,47 +157,47 @@
                     @foreach ($fights as $fight)
                     <div class="form-group">
 
-                        {{-- <label for="fighter_id{{ $fight->order }}">Pick your Fighter {{ $fight->order }}: </label>
+                        <label for="fighter_id{{ $fight->order }}">Pick your Fighter {{ $fight->order }}: </label>
                         <select name="fighter_id{{ $fight->order }}">
 
                             <option type="radio" value="{{ $fight->fighterA->id  }}">{{ $fight->fighterA->name }}</option>
                             <option type="radio" value="{{ $fight->fighterB->id  }}">{{ $fight->fighterB->name }}</option>
 
-                        </select> --}}
+                        </select>
 
 
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        {{-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-secondary active">
                                 <input type="radio" name="fighter_id{{ $fight->order }}" id="option1" value="{{ $fight->fighterA->id  }}" autocomplete="off" checked>{{ $fight->fighterA->name }}
-                            </label>
-                            <label class="btn btn-secondary">
-                                <input type="radio" name="fighter_id{{ $fight->order }}" id="option2" value="{{ $fight->fighterB->id  }}" autocomplete="off">{{ $fight->fighterB->name }}
-                            </label>
-                        </div>
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="fighter_id{{ $fight->order }}" id="option2" value="{{ $fight->fighterB->id  }}" autocomplete="off">{{ $fight->fighterB->name }}
+                        </label>
+                    </div> --}}
 
-                    </div>
-                    @endforeach
+            </div>
+            @endforeach
 
 
-                    {{-- <div class="form-group">
+            {{-- <div class="form-group">
                         <label for="fighter_id2">Pick your {{ $fight1->order }} Fighter: </label>
-                    <select name="fighter_id2">
+            <select name="fighter_id2">
 
-                        <option value="{{ $fight1->fighterA->name }}">{{ $fight1->fighterA->name }}</option>
-                        <option value="{{ $fight1->fighterB->name }}">{{ $fight1->fighterB->name }}</option>
+                <option value="{{ $fight1->fighterA->name }}">{{ $fight1->fighterA->name }}</option>
+                <option value="{{ $fight1->fighterB->name }}">{{ $fight1->fighterB->name }}</option>
 
-                    </select>
-            </div> --}}
-
-
-            <a href="{{ route('user.events.show', $event->id) }}" class="btn btn-default">cancel</a>
-            <button type="submit" class="btn btn-primary pull-right">Submit</button>
+            </select>
+        </div> --}}
 
 
+        <a href="{{ route('user.events.show', $event->id) }}" class="btn btn-default">cancel</a>
+        <button type="submit" class="btn btn-primary pull-right">Submit</button>
 
-            </form>
-        </div>
+
+
+        </form>
     </div>
+</div>
 </div>
 
 

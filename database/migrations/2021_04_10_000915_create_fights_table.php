@@ -20,6 +20,8 @@ class CreateFightsTable extends Migration
             $table->unsignedbigInteger('fighter_id_2')->unsigned();
             $table->string('order');
             $table->string('weightClass');
+            $table->string('odds1')->nullable();
+            $table->string('odds2')->nullable();
             $table->timestamps();
 
 
