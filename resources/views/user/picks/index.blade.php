@@ -126,11 +126,12 @@
 
 
 @foreach ($picks as $pick)
+
 <hr>
 <h6a>Your Picks</h6a>
 <h6a>{{ $pick->event->subName }} - {{ $pick->event->nameEvent }}</h6a>
 <div class="row">
-
+    @if ($pick->fighter_id1)
     <div class="col-2">
         <br>
         <h3>Pick 1:</h3>
@@ -141,7 +142,7 @@
         </div>
         <br>
     </div>
-
+    @elseif ($pick->fighter_id2)
     <div class="col-2">
         <br>
         <h3>Pick 2:</h3>
@@ -152,7 +153,7 @@
         </div>
         <br>
     </div>
-
+    @elseif ($pick->fighter_id3)
     <div class="col-2">
         <br>
         <h3>Pick 3:</h3>
@@ -163,7 +164,7 @@
         </div>
         <br>
     </div>
-
+    @elseif ($pick->fighter_id4)
     <div class="col-2">
         <br>
         <h3>Pick 4:</h3>
@@ -174,7 +175,7 @@
         </div>
         <br>
     </div>
-
+    @elseif ($pick->fighter_id5)
     <div class="col-2">
         <br>
         <h3>Pick 5:</h3>
@@ -185,7 +186,7 @@
         </div>
         <br>
     </div>
-
+    @elseif ($pick->fighter_id6)
     <div class="col-2">
         <br>
         <h3>Pick 6:</h3>
@@ -196,7 +197,7 @@
         </div>
         <br>
     </div>
-
+    @elseif ($pick->fighter_id7)
     <div class="col-2">
         <br>
         <h3>Pick 7:</h3>
@@ -207,7 +208,7 @@
         </div>
         <br>
     </div>
-
+    @elseif ($pick->fighter_id8)
     <div class="col-2">
         <br>
         <h3>Pick 8:</h3>
@@ -218,7 +219,7 @@
         </div>
         <br>
     </div>
-
+    @elseif ($pick->fighter_id9)
     <div class="col-2">
         <br>
         <h3>Pick 9:</h3>
@@ -229,7 +230,7 @@
         </div>
         <br>
     </div>
-
+    @elseif ($pick->fighter_id10)
     <div class="col-2">
         <br>
         <h3>Pick 10:</h3>
@@ -242,7 +243,7 @@
     </div>
 
 
-
+    @endif
 
 </div>
 @endforeach
@@ -253,6 +254,18 @@
 </div>
 </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 @endsection
 @section('footer')
 <div class="container-fluid">

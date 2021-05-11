@@ -45,71 +45,65 @@
             @endif
         </div>
     </div> --}}
-</div>
 
 
-@foreach ($events as $event)
+
+    @foreach ($events as $event)
 
 
-<div class="card test">
-    <div class="card-body card1 test">
-        <div class="row">
-            <div class="col-2" style="text-align: center; padding: 70px 0;">
-                <a href="{{ route('user.events.show', $event->id) }}">
-                    <h6a class="card-title">{{ $event->subName }}</h6a>
-                </a>
-            </div>
+    <div class="card test">
+        <div class="card-body card1 test">
+            <div class="row">
+                <div class="col-2" style="text-align: center; padding: 70px 0;">
+                    <a href="{{ route('user.events.show', $event->id) }}">
+                        <h6a class="card-title">{{ $event->subName }}</h6a>
+                    </a>
+                </div>
 
 
-            <div class="col-2" style="padding: 30px 0;">
-                <a href="{{ route('user.events.show', $event->id) }}">
-                    <div class="img-container">
-                        <img class="img" src="{{ $event->pictureEvent }}" alt="Card image cap">
-                    </div>
-                </a>
-            </div>
-            <div class="col-2" style="padding: 30px 0;">
-                <a href="{{ route('user.events.show', $event->id) }}">
-                    <div class="img-container">
-                        <img class="img" src="{{ $event->logoEvent }}" alt="Card image cap">
-                    </div>
-                </a>
-            </div>
+                <div class="col-2" style="padding: 30px 0;">
+                    <a href="{{ route('user.events.show', $event->id) }}">
+                        <div class="img-container">
+                            <img class="img" src="{{ $event->pictureEvent }}" alt="Card image cap">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-2" style="padding: 30px 0;">
+                    <a href="{{ route('user.events.show', $event->id) }}">
+                        <div class="img-container">
+                            <img class="img" src="{{ $event->logoEvent }}" alt="Card image cap">
+                        </div>
+                    </a>
+                </div>
 
-            <br>
+                <br>
 
-            <div class="col-4" style="text-align: center; padding: 30px 0;">
+                <div class="col-4" style="text-align: center; padding: 30px 0;">
 
-                <h6a class="card-title">{{ $event->nameEvent }}</h6a>
-                <h6 style="color:black;">{{ $event->location }}</h6>
-
-
-                <h6 style="color:black;">{{ $event->startTime }} / {{ $event->dateEvent }}</h6>
+                    <h6a class="card-title">{{ $event->nameEvent }}</h6a>
+                    <h6 style="color:black;">{{ $event->location }}</h6>
 
 
-            </div>
+                    <h6 style="color:black;">{{ $event->startTime }} / {{ $event->dateEvent }}</h6>
 
-            <div class="col-2">
-                <div style="text-align: center; padding: 70px 0;">
-                    <a href="{{ route('user.events.show', $event->id) }}" class="btn btn-dark">View</a>
 
                 </div>
+
+                <div class="col-2">
+                    <div style="text-align: center; padding: 70px 0;">
+                        <a href="{{ route('user.events.show', $event->id) }}" class="btn btn-dark">View</a>
+
+                    </div>
+                </div>
             </div>
+
+
         </div>
 
 
     </div>
 
-    <div>
-        {{-- spacer --}}
-        <br><br>
-    </div>
-
-
-
 </div>
-
-
 
 
 </div>

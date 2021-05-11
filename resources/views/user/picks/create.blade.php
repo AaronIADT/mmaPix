@@ -156,13 +156,25 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     @foreach ($fights as $fight)
                     <div class="form-group">
-                        <label for="fighter_id{{ $fight->order }}">Pick your Fighter {{ $fight->order }}: </label>
+
+                        {{-- <label for="fighter_id{{ $fight->order }}">Pick your Fighter {{ $fight->order }}: </label>
                         <select name="fighter_id{{ $fight->order }}">
 
-                            <option value="{{ $fight->fighterA->id  }}">{{ $fight->fighterA->name }}</option>
-                            <option value="{{ $fight->fighterB->id  }}">{{ $fight->fighterB->name }}</option>
+                            <option type="radio" value="{{ $fight->fighterA->id  }}">{{ $fight->fighterA->name }}</option>
+                            <option type="radio" value="{{ $fight->fighterB->id  }}">{{ $fight->fighterB->name }}</option>
 
-                        </select>
+                        </select> --}}
+
+
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-secondary active">
+                                <input type="radio" name="fighter_id{{ $fight->order }}" id="option1" value="{{ $fight->fighterA->id  }}" autocomplete="off" checked>{{ $fight->fighterA->name }}
+                            </label>
+                            <label class="btn btn-secondary">
+                                <input type="radio" name="fighter_id{{ $fight->order }}" id="option2" value="{{ $fight->fighterB->id  }}" autocomplete="off">{{ $fight->fighterB->name }}
+                            </label>
+                        </div>
+
                     </div>
                     @endforeach
 
