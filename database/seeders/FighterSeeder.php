@@ -62,7 +62,7 @@ class FighterSeeder extends Seeder
       $fighter->name = 'Jorge Masvidal';
       $fighter->age = 35;
       $fighter->height = '71';
-      $fighter->weight = '156 lbs';
+      $fighter->weight = '170 lbs';
       $fighter->reach = '71 inch';
       $fighter->record = '35-14-0';
       $fighter->country = 'Miami, U.S.A';
@@ -523,16 +523,6 @@ $fighter = new Fighter();
             $fighter->picfighter = 'https://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_bio_full_body/s3/2018-10/ALDO_JOSE_L.png?p_V9I3eMDXTPq_nWVMxjH_jHoA5K_bMq&itok=SReg5NVm';
             $fighter->save();
 
-      $fighter = new Fighter();
-            $fighter->name = '6ix9ine';
-            $fighter->age = 69;
-            $fighter->height = '69';
-            $fighter->weight = '69 lbs';
-            $fighter->reach = '69 inch';
-            $fighter->record = '69-0-0';
-            $fighter->country = '69';
-            $fighter->picfighter = 'https://www.pngfind.com/pngs/m/196-1966615_tekashi-tekashi69-69tekashi-69-6ix9ine-colorful-packman-got.png';
-            $fighter->save();
 
       $fighter = new Fighter();
             $fighter->name = 'Darren Till';

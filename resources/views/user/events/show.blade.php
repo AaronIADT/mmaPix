@@ -2,11 +2,35 @@
 
 @section('content')
 <div class="container">
+
     <div class="row">
 
         @if (count($fights) == 0)
         <h2a>There are no fights for this event yet.</h2a>
         @else
+
+        <div class="col-md-12" style="text-align: center;">
+
+            <h2a style="text-align:center;">{{ $event->subName }} - {{ $event->nameEvent }}</h2a>
+
+        </div>
+
+        <div class="col-md-4 offset-md-4" style="text-align: center;">
+
+            <h7a style="color:black;">{{ $event->startTime }} / {{ $event->dateEvent }}</h7a>
+            <h6 style="color:black;">{{ $event->location }}</h6>
+
+
+            <br>
+        </div>
+
+        <div class="col-md-12 col-md-offset-2">
+
+            <a href="{{ route('user.picks.create', $event->id) }}" class="btn btn-dark">Add Pick</a>
+            <a href="{{ route('user.events.index') }}" class="btn btn-default">Back</a>
+
+        </div>
+
 
         @foreach ($fights as $fight)
         <div class="col-12">
@@ -26,7 +50,7 @@
                     <div class="col-1" style="text-align: center; padding: 10px 0;">
                         <br>
                         <a href="{{ route('user.fighters.index') }}">
-                            <h6a class="card-title">{{ $fight->fighterA->name}}</h6a>
+                            <h6b class="card-title">{{ $fight->fighterA->name}}</h6b>
                         </a>
 
                     </div>
@@ -83,7 +107,7 @@
                     <div class="col-1" style="text-align: center; padding: 10px 0;">
                         <br>
                         <a href="{{ route('user.fighters.index') }}">
-                            <h6a class="card-title">{{ $fight->fighterB->name}}</h6a>
+                            <h6b class="card-title">{{ $fight->fighterB->name}}</h6b>
                         </a>
                     </div>
 

@@ -28,7 +28,7 @@ class FighterController extends Controller
      */
     public function index()
     {
-        $fighters = Fighter::paginate(12);
+        $fighters = Fighter::orderBy('name')->paginate(12);
 
         return view('user.fighters.index', [
           'fighters' => $fighters

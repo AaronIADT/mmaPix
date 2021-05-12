@@ -78,13 +78,17 @@
 
                 <br>
 
-                <div class="col-4" style="text-align: center; padding: 30px 0;">
+                <div class="col-3 offset-md-1" style="text-align: center; padding: 30px 0;">
 
                     <h6a class="card-title">{{ $event->nameEvent }}</h6a>
+                    <br>
+                    <a href="{{ route('user.events.show', $event->id) }}">
+                        <h7a>{{ $event->startTime }} / {{ $event->dateEvent }}</h7a>
+                    </a>
                     <h6 style="color:black;">{{ $event->location }}</h6>
 
 
-                    <h6 style="color:black;">{{ $event->startTime }} / {{ $event->dateEvent }}</h6>
+
 
 
                 </div>
@@ -103,12 +107,13 @@
 
     </div>
 
+
+    <hr>
+    @endforeach
 </div>
 
 
 </div>
-<hr>
-@endforeach
 </div>
 </div>
 @endsection

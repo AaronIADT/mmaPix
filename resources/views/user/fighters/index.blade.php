@@ -29,22 +29,67 @@
 
 
                                 <div class="card-body card1 test">
-                                    <div>
+                                    <div class="textContain">
                                         <a href="{{ route('user.fighters.show', $fighter->id) }}">
-                                            <h6a class="card-title">{{ $fighter->name }}</h6a>
+                                            <h6a class="card-title nameTextAdjust">{{ $fighter->name }}</h6a>
                                         </a>
                                     </div>
                                     <div class="img-container">
                                         <a href="{{ route('user.fighters.show', $fighter->id) }}">
                                             <img class="img" width="10%" height="10%" src="{{ $fighter->picfighter }}" alt="Card image cap">
+
                                         </a>
+
                                     </div>
-                                    <br>
-                                    <div style="text-align: center;">
-                                        <h6 style="color:black;">Weight: {{ $fighter->weight }}</h6>
-                                        <h6 style="color:black;">Record: {{ $fighter->record }}</h6>
-                                        <h6 style="color:black;">Age: {{ $fighter->age }}</h6>
-                                        <h6 style="color:black;">Height: {{ $fighter->height }}</h6>
+
+                                    <div style="text-align: center; padding-top: 10px;">
+                                        {{-- <h7a style="color:black;">Weight: {{ $fighter->weight }}</h7a>
+                                        <br>
+                                        <h7a style="color:black;">Record: {{ $fighter->record }}</h7a> --}}
+
+
+
+
+                                        @if ($fighter->weight == "115 lbs")
+                                        <h7b>Strawweight</h7b>
+
+                                        @elseif ($fighter->weight == "125 lbs")
+                                        <h7b>Flyweight</h7b>
+
+                                        @elseif ($fighter->weight == "135 lbs")
+                                        <h7b>Bantamweight</h7b>
+
+                                        @elseif ($fighter->weight == "145 lbs")
+                                        <h7b>Featherweight</h7b>
+
+                                        @elseif ($fighter->weight == "155 lbs")
+                                        <h7b>Lightweight</h7b>
+
+                                        @elseif ($fighter->weight == "170 lbs")
+                                        <h7b>Welterweight</h7b>
+
+                                        @elseif ($fighter->weight == "185 lbs")
+                                        <h7b>Middleweight</h7b>
+
+                                        @elseif ($fighter->weight == "205 lbs")
+                                        <h7b>Light Heavyweight</h7b>
+
+                                        @else
+                                        <h7b>Heavyweight</h7b>
+                                        @endif
+
+
+
+
+
+                                        <br>
+
+                                        {{-- <h7b>{{ $fighter->weight }}</h7b>
+                                        <br> --}}
+                                        <h7b>{{ $fighter->record }}</h7b>
+
+
+
                                     </div>
 
 
@@ -58,6 +103,7 @@
                         </a> --}}
                     </div>
                     </a>
+
 
                     @endforeach
                 </div>
@@ -73,9 +119,11 @@
 
 
     </div>
-    {{ $fighters->links("pagination::bootstrap-4") }}
+    <div class="col-4 offset-md-4">
+        <br>
+        {{ $fighters->links("pagination::bootstrap-4") }}
 
-
+    </div>
     @endif
 
     {{-- <div class="card-body">
