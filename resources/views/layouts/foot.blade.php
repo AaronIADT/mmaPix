@@ -2,8 +2,8 @@
 <footer class="page-footer font-small blue pt-4">
     <br>
     <!-- Footer Links -->
-    <div class="container-fluid text-center text-md-left">
-
+    <div class="container text-center text-md-left">
+        <br>
         <!-- Grid row -->
         <div class="row">
 
@@ -19,7 +19,7 @@
                 <div class="col-md-2 mt-md-0 mt-3">
 
                     <!-- Content -->
-                    <a href="#" target="new">
+                    <a href="{{ route('user.home') }}" target="new">
                         <img src="{{ asset('photo/logo1.png') }}" height="200%" width="200%">
                     </a>
 
@@ -39,20 +39,20 @@
 
 
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
+            <div class="col-3">
 
                 <ul class="list-unstyled">
-                    <li>
-                        <a href="#!">EVENTS</a>
+                    <li class="footerItem">
+                        <a href="{{ route('user.events.index') }}">EVENTS</a>
                     </li>
-                    <li>
-                        <a href="#!">MYPICKS</a>
+                    <li class="footerItem">
+                        <a href="{{ route('user.picks.index') }}">MYPICKS</a>
                     </li>
-                    <li>
-                        <a href="#!">LEAGUE</a>
+                    <li class="footerItem">
+                        <a href="{{ route('user.fighters.index') }}">FIGHTERS</a>
                     </li>
-                    <li>
-                        <a href="#!">CONTACT</a>
+                    <li class="footerItem">
+                        <a href="{{ route('user.home') }}">CONTACT</a>
                     </li>
                 </ul>
 
@@ -60,28 +60,31 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
+            <div class="col-3">
 
                 <ul class="list-unstyled">
-                    <li>
+                    <li class="footerItem">
                         <a href="#!">Terms of Use</a>
                     </li>
-                    <li>
+                    <li class="footerItem">
                         <a href="#!">Privacy Policy</a>
                     </li>
-                    <li>
+                    <li class="footerItem">
                         <a href="#!">Cookie Policy</a>
                     </li>
-                    <li>
+                    <li class="footerItem">
                         <a href="#!">GDPR Commitment</a>
                     </li>
                 </ul>
 
             </div>
             <!-- Grid column -->
-
+            <br>
+            <br>
+            <br>
         </div>
         <!-- Grid row -->
+
 
     </div>
     <!-- Footer Links -->

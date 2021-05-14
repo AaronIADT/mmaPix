@@ -43,12 +43,6 @@
                                     </div>
 
                                     <div style="text-align: center; padding-top: 10px;">
-                                        {{-- <h7a style="color:black;">Weight: {{ $fighter->weight }}</h7a>
-                                        <br>
-                                        <h7a style="color:black;">Record: {{ $fighter->record }}</h7a> --}}
-
-
-
 
                                         @if ($fighter->weight == "115 lbs")
                                         <h7b>Strawweight</h7b>
@@ -78,55 +72,31 @@
                                         <h7b>Heavyweight</h7b>
                                         @endif
 
-
-
-
-
                                         <br>
-
-                                        {{-- <h7b>{{ $fighter->weight }}</h7b>
-                                        <br> --}}
                                         <h7b>{{ $fighter->record }}</h7b>
-
-
 
                                     </div>
 
 
 
 
-
-
                                 </div>
+                            </div>
+                        </a>
 
-                                {{-- <a href="{{ route('user.fighters.show', $fighter->id) }}" class="btn btn-dark">View
-                        </a> --}}
+
+                        @endforeach
                     </div>
-                    </a>
 
-
-                    @endforeach
                 </div>
+                <div class="col-4 offset-md-4">
+                    <br>
+                    {{ $fighters->links("pagination::bootstrap-4") }}
 
-                {{-- TEST PAGINATION --}}
+                </div>
+                @endif
 
-                {{-- <div class="col-3">
-                        <div class="row">
-                            {{ $fighters->links() }}
-            </div>
-        </div> --}}
-
-
-
-    </div>
-    <div class="col-4 offset-md-4">
-        <br>
-        {{ $fighters->links("pagination::bootstrap-4") }}
-
-    </div>
-    @endif
-
-    {{-- <div class="card-body">
+                {{-- <div class="card-body">
             @if (count($fighters) === 0)
             <p>There are no fighters</p>
             @else
@@ -143,24 +113,24 @@
                 <tbody>
                     @foreach ($fighters as $fighter)
                     <tr data-id="{{ $fighter->id }}">
-    <td>{{ $fighter->name }}</td>
-    <td>{{ $fighter->age }}</td>
-    <td>{{ $fighter->height }}</td>
-    <td>{{ $fighter->weight }}</td>
-    <td>{{ $fighter->reach }}</td>
-    <td>{{ $fighter->record }}</td>
-    <td>{{ $fighter->country }}</td>
-    <td>
-        <a href="{{ route('user.fighters.show', $fighter->id) }}" class="btn btn-primary">View</a>
-    </td>
-    </tr>
-    @endforeach
-    </tbody>
-    </table>
-    @endif
-</div> --}}
-</div>
-</div>
+                <td>{{ $fighter->name }}</td>
+                <td>{{ $fighter->age }}</td>
+                <td>{{ $fighter->height }}</td>
+                <td>{{ $fighter->weight }}</td>
+                <td>{{ $fighter->reach }}</td>
+                <td>{{ $fighter->record }}</td>
+                <td>{{ $fighter->country }}</td>
+                <td>
+                    <a href="{{ route('user.fighters.show', $fighter->id) }}" class="btn btn-primary">View</a>
+                </td>
+                </tr>
+                @endforeach
+                </tbody>
+                </table>
+                @endif
+            </div> --}}
+        </div>
+    </div>
 </div>
 </div>
 @endsection

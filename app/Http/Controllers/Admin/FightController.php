@@ -37,7 +37,8 @@ class FightController extends Controller
     public function create($id)
     {
         $event = Event::findOrFail($id);
-        $fighters = Fighter::all();
+        // $fighters = Fighter::all();
+        $fighters = Fighter::orderBy('name')->get();
 
         return view('admin.events.fights.create', [
           'event' => $event,

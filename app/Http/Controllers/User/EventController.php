@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\Fight;
+use App\Models\Pick;
 use App\Models\Fighter;
 
 class EventController extends Controller
@@ -69,11 +70,13 @@ class EventController extends Controller
     {
       $event = Event::findOrFail($id);
       $fights = Fight::where('event_id', $id)->get();
+      $picks = Pick::where('user_id',auth()->id())->get();
 
 
       return view('user.events.show', [
         'event' => $event,
-        'fights' => $fights
+        'fights' => $fights,
+        'picks' => $picks
 
       ]);
     }

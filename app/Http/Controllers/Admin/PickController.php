@@ -34,7 +34,8 @@ class PickController extends Controller
     public function index()
     {
       $user = Auth::user();
-      $picks = Pick::all();
+      $picks = Pick::where('user_id',auth()->id())->get();
+      // $picks = Pick::all();
 
       return view('admin.picks.index', [
         'picks' => $picks,
@@ -51,7 +52,7 @@ class PickController extends Controller
     {
       $event = Event::findOrFail($id);
 
-      $fights = Fight::all();
+      $fights = Fight::where('event_id', $id)->get();
       $fighters = Fighter::all();
     //  $fighters = Fighter::all();
 

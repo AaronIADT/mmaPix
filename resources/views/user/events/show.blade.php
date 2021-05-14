@@ -10,29 +10,68 @@
         @else
 
         <div class="col-md-12" style="text-align: center;">
-
-            <h2a style="text-align:center;">{{ $event->subName }} - {{ $event->nameEvent }}</h2a>
+            <br>
+            <h1a style="text-align:center;">{{ $event->subName }} - {{ $event->nameEvent }}</h1a>
 
         </div>
+
+
+
+
+        {{-- @foreach ($picks as $pick)
+
+        @if ($pick->event_id == $event->id)
+        <div class="col-md-4 offset-md-4" style="text-align: center;">
+            <h7a style="color:black;">{{ $event->startTime }} / {{ $event->dateEvent }}</h7a>
+        <h6 style="color:black;">{{ $event->location }}</h6>
+        <br>
+        <h5>You have already made your picks</h5>
+        <a href="{{ route('user.picks.index') }}" class="btn btn-dark">View Picks</a>
+    </div>
+    @break($pick->event_id == $event->id)
+
+        @elseif ($pick->event_id != $event->id)
 
         <div class="col-md-4 offset-md-4" style="text-align: center;">
 
             <h7a style="color:black;">{{ $event->startTime }} / {{ $event->dateEvent }}</h7a>
             <h6 style="color:black;">{{ $event->location }}</h6>
-
-
             <br>
-        </div>
-
-        <div class="col-md-12 col-md-offset-2">
-
+            <h5>You havn't made your picks yet</h5>
             <a href="{{ route('user.picks.create', $event->id) }}" class="btn btn-dark">Add Pick</a>
-            <a href="{{ route('user.events.index') }}" class="btn btn-default">Back</a>
+
+            @break($pick->event_id != $event->id)
+                <br>
 
         </div>
+
+        @else
+
+        @endif
+
+        @endforeach --}}
+
+
 
 
         @foreach ($fights as $fight)
+        @if ($fight->order == 1)
+        <div class="col-12" style="text-align: center;">
+            <br>
+            <h2a>MAIN CARD</h2a>
+            <br>
+        </div>
+        @elseif ($fight->order == 6)
+        <div class="col-12" style="text-align: center;">
+            <br>
+            <br>
+            <br>
+            <h2a>PRELIMINARY CARD</h2a>
+            <br>
+            <br>
+            <br>
+        </div>
+        @endif
         <div class="col-12">
             <hr>
             <div class="card-body card1">
@@ -49,7 +88,7 @@
 
                     <div class="col-1" style="text-align: center; padding: 10px 0;">
                         <br>
-                        <a href="{{ route('user.fighters.index') }}">
+                        <a href="{{ route('user.fighters.show', $fight->fighterA->id) }}">
                             <h6b class="card-title">{{ $fight->fighterA->name}}</h6b>
                         </a>
 
@@ -106,7 +145,7 @@
 
                     <div class="col-1" style="text-align: center; padding: 10px 0;">
                         <br>
-                        <a href="{{ route('user.fighters.index') }}">
+                        <a href="{{ route('user.fighters.show', $fight->fighterB->id) }}">
                             <h6b class="card-title">{{ $fight->fighterB->name}}</h6b>
                         </a>
                     </div>
@@ -134,7 +173,8 @@
         @endforeach
         @endif
         <div class="col-md-12 col-md-offset-2">
-
+            <br>
+            <br>
             <a href="{{ route('user.picks.create', $event->id) }}" class="btn btn-dark">Add Pick</a>
             <a href="{{ route('user.events.index') }}" class="btn btn-default">Back</a>
 
@@ -172,7 +212,7 @@
 
 
 
-    </div>
+</div>
 </div>
 <br>
 <br>

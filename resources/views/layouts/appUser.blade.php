@@ -68,8 +68,8 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('user.home') }}" class="nav-link">
-                                CONTACT
+                            <a href="{{ route('about') }}" class="nav-link">
+                                ABOUT
                             </a>
                         </li>
                         @guest

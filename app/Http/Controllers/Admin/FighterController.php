@@ -28,7 +28,8 @@ class FighterController extends Controller
      */
     public function index()
     {
-        $fighters = Fighter::all();
+
+        $fighters = Fighter::orderBy('name')->paginate(12);
 
         return view('admin.fighters.index', [
           'fighters' => $fighters
@@ -60,7 +61,8 @@ class FighterController extends Controller
             'weight' => 'required|max:191',
             'reach' => 'required|max:191',
             'record' => 'required|max:191',
-            'country' => 'required|max:191'
+            'country' => 'required|max:191',
+            'picfighter' => 'required|max:255'
         ]);
 
 
@@ -73,6 +75,7 @@ class FighterController extends Controller
         $fighter->reach = $request->input('reach');
         $fighter->record = $request->input('record');
         $fighter->country = $request->input('country');
+        $fighter->picfighter = $request->input('picfighter');
 
         $fighter->save();
 
@@ -127,7 +130,8 @@ class FighterController extends Controller
             'weight' => 'required|max:191',
             'reach' => 'required|max:191',
             'record' => 'required|max:191',
-            'country' => 'required|max:191'
+            'country' => 'required|max:191',
+            'picfighter' => 'required|max:255'
         ]);
 
         $fighter = Fighter::findOrFail($id);
@@ -139,6 +143,7 @@ class FighterController extends Controller
         $fighter->reach = $request->input('reach');
         $fighter->record = $request->input('record');
         $fighter->country = $request->input('country');
+        $fighter->picfighter = $request->input('picfighter');
 
         $fighter->save();
 

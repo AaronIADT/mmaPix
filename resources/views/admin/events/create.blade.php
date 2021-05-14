@@ -23,11 +23,11 @@
                     <form method="POST" action="{{ route('admin.events.store') }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group">
-                            <label for="title">Name Event</label>
+                            <label for="title">Main Event</label>
                             <input type="text" class="form-control" id="nameEvent" name="nameEvent" value="{{ old('nameEvent') }}" />
                         </div>
                         <div class="form-group">
-                            <label for="title">Main Event</label>
+                            <label for="title">Sub Number</label>
                             <input type="text" class="form-control" id="subName" name="subName" value="{{ old('subName') }}" />
                         </div>
                         <div class="form-group">

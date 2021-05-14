@@ -50,6 +50,10 @@
                             <label for="title">Country</label>
                             <input type="text" class="form-control" id="country" name="country" value="{{ old('country', $fighter->country) }}" />
                         </div>
+                        <div class="form-group">
+                            <label for="title">Fighter Picture</label>
+                            <input type="text" class="form-control" id="picfighter" name="picfighter" value="{{ old('picfighter', $fighter->picfighter) }}" />
+                        </div>
                         <div class="float-right">
                             <a href="{{ route('admin.fighters.index') }}" class="btn btn-default">Cancel</a>
                             <button type="submit" class="btn btn-primary pull-right">Submit</button>

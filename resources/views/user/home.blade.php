@@ -7,6 +7,12 @@
 
 
 
+
+
+
+
+
+
             {{-- <script src="https://apps.elfsight.com/p/platform.js" defer></script>
         <div class="elfsight-app-5f9725b7-d38e-4ce7-b2fd-d3841528fabb"></div> --}}
 
@@ -44,9 +50,41 @@
 </div>
 
 
-<div class="col-sm-4" style=" overflow: scroll; height: 600px;">
+<div class="col-sm-4" style=" overflow: scroll; height: 800px;">
     <a class="twitter-timeline" href="https://twitter.com/ufc?ref_src=twsrc%5Etfw">Tweets by ufc</a>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+
+</div>
+<div class="col-8">
+    <br>
+    <hr>
+    <br>
+</div>
+<div class="col-4">
+    <br>
+</div>
+<div class="col-8">
+    <h6a>MMA NEWS RSS FEED:</h6a>
+    <br>
+    <br>
+
+
+    <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" preloader-text="Loading" data-fw-param="146197/"></script>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</div>
+
+<div class="col-4">
+
+
+    <br>
 </div>
 </div>
 </div>

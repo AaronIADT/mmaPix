@@ -79,6 +79,7 @@ h6a{
     color: black;
     font-size: 30px;
     font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.5px;
 
 
 }
@@ -95,8 +96,16 @@ h2a{
     color: black;
     font-size: 45px;
     font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.5px;
 
 
+}
+
+h1a{
+  color: black;
+  font-size: 55px;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 0.5px;
 }
 
 h2a{
@@ -124,6 +133,10 @@ h7a{
     text-align: center;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 h7b{
     color: #707070;
     font-size: 16px;
@@ -131,6 +144,33 @@ h7b{
     font-weight: 300;
     text-align: center;
     letter-spacing: 1px;
+}
+
+p1{
+  color: black;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+h7c{
+    color: black;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.dropdownText
+{
+  color: black;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 0.75px;
 }
 
 .nameTextAdjust
@@ -209,6 +249,15 @@ midBlock
 
 }
 
+.footerItem
+{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 16px;
+
+}
+
+
+
 body{
   background-color: white;
 }
@@ -216,6 +265,10 @@ body{
 .test{
   border : none !important;
   background-color: white;
+}
+
+.adminFightCard{
+  height: 460px;
 }
 
 a{
@@ -279,11 +332,13 @@ input{
     max-height: 150px;
 }
 
+
+
 .img-container4 {
     overflow: hidden;
-    /* max-height: 150px; */
-    height: 15%;
-    width: 15%;
+    max-height: 150px;
+
+    width: 25%;
     float: right;
 
 }
@@ -298,6 +353,20 @@ input{
 {
   height: 70px;
 }
+
+/* ALL IMAGE CSS */
+
+.imgSymbol
+{
+  max-width: 15%;
+  height: auto;
+  float: right;
+  padding-top: 5px;
+
+}
+
+
+
 
 .img {
      width: 100%;

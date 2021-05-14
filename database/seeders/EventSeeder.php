@@ -25,13 +25,13 @@ class EventSeeder extends Seeder
         $event->save();
 
         $event = new Event();
-        $event->nameEvent = 'REYES VS PROCHAZKA';
-        $event->subName = 'FN 125';
-        $event->location = 'America';
+        $event->nameEvent = 'Oliviera VS Chandler';
+        $event->subName = 'UFC 262';
+        $event->location = 'Toyota Center Houston, TX United States';
         $event->startTime = '3:00 AM IST';
-        $event->dateEvent = 'Sun, May 2';
-        $event->pictureEvent = 'https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2020-09/REYES_DOMINICK_10-18.png?BEYF1Pv4vI4XHTgspkinkDhFrMYipA9n&itok=CBWJbyHR';
-        $event->logoEvent = 'https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2020-07/PROCHAZKA_JIRI_07-11.png?Ja1Tl7uwpxCxlbZDUPTg9eZ_cbVJA5Iy&itok=LrP-FaHm';
+        $event->dateEvent = 'Sun, May 16';
+        $event->pictureEvent = 'https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2020-02/OLIVEIRA_CHARLES.png?cLp_SCRpQfDLKdCBI8pTkYqQu3lA7N1U&itok=bxIVK6Ht';
+        $event->logoEvent = 'https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2020-12/CHANDLER_MICHAEL_10-24.png?null&itok=UKi38_g6';
         $event->save();
 
 

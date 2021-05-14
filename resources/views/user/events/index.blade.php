@@ -79,8 +79,9 @@
                 <br>
 
                 <div class="col-3 offset-md-1" style="text-align: center; padding: 30px 0;">
-
-                    <h6a class="card-title">{{ $event->nameEvent }}</h6a>
+                    <a href="{{ route('user.events.show', $event->id) }}">
+                        <h6a class="card-title">{{ $event->nameEvent }}</h6a>
+                    </a>
                     <br>
                     <a href="{{ route('user.events.show', $event->id) }}">
                         <h7a>{{ $event->startTime }} / {{ $event->dateEvent }}</h7a>

@@ -64,14 +64,14 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="signUp.html" class="nav-link">
+                            <a href="{{ route('admin.home') }}" class="nav-link">
                                 LEAGUE
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="signUp.html" class="nav-link">
-                                CONTACT
+                            <a href="{{ route('about') }}" class="nav-link">
+                                ABOUT
                             </a>
                         </li>
                         @guest
